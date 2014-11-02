@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+  title= title
+  link(rel='stylesheet', href='/stylesheets/style.css')
+  link(rel='stylesheet', href='/stylesheets/app.css')
+  script(src='/javascripts/jquery-2.1.1.js')
+  body
+    .screen(onclick="hidemenu()")
+    .menu
+      h1 SMDE
+      .menu_option
+        a(href="/") Inicio
+      .menu_option Iniciar Sesion
+      .menu_option Registrarme    
+      span.bottom Crafted By 
+        b Belon
+
+    .header
+      .botton_menu(onclick="showmenu()")
+        span
+        span
+        span
+    .header_under
+  
+    block content
+
+
+  script.
+      function showmenu(){
+          $(".menu").animate({left:'0px'});
+          $(".menu").css('box-shadow' ,'2px 0px 15px #000');
+          $(".screen").show();
+      }
+      function hidemenu(){
+          $(".menu").animate({left:'-220px'});
+          $(".menu").css('box-shadow' ,'none');
+          $(".screen").hide();
+      }

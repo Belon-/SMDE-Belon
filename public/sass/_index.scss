@@ -1,0 +1,16 @@
+$squareColor: #00897b;
+.square_container{
+	width: 570px;
+	padding: 50px;
+	height: 1000px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+.square{
+	width: 250px;
+	height: 250px;
+	float: left;
+	margin: 15px;
+	background-color: $squareColor;
+}

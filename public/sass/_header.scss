@@ -1,0 +1,81 @@
+$mainColor: #7cb342;
+.header{
+	width: 100%;
+	height: 45px;
+	background-color: $mainColor;
+	border-bottom: 5px solid darken($mainColor, 10%);
+	margin: 0;
+	padding: 17px 0px 8px 0px;
+	position: fixed;
+	z-index: 59;
+}
+
+.header_under{
+	width: 100%;
+	height: 75px; 
+}
+
+.botton_menu{
+	width: 40px;
+	height: 30px;
+	position: relative;
+	left: 20px;
+	cursor: pointer;
+
+	span{
+		display: block;
+		width: 90%;
+		margin: 6px auto;
+		height: 4px;
+		border-radius: 2px;
+		background-color: #fff;
+	}	
+}
+
+.menu{
+	left:-220px;
+	width: 220px;
+	position: fixed;
+	height: 100%;
+	z-index: 99;
+	background-color: rgba(10,10,10,0.9);	
+	h1{
+		font-family: "Roboto";
+		color: #fff;
+		font-weight: 100;
+		text-align: center;
+	}
+	&:hover{
+		left: 0px;
+	}
+	span.bottom{
+		color:#fff;
+		position: absolute;
+		text-align: center;
+		bottom: 10px;
+		left: 50px;
+		font-weight: 100;
+	}
+}
+
+.menu_option{
+	width: 90%;
+	color: #f2f2f2;
+	padding: 15px 0px 15px 10%;
+	font-size: 16px;
+	font-weight: 100;
+	text-align: left;
+	cursor: pointer;
+	@include trans(.5s);
+	&:hover{
+		border-left: 4px solid #fff;
+		background-color: rgba(140,140,140,0.2);
+		width: auto;
+		
+	}
+	a{
+		color:#f2f2f2;
+		text-decoration: none;
+	}
+}
+
