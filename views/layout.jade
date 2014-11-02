@@ -5,14 +5,18 @@ html
   link(rel='stylesheet', href='/stylesheets/style.css')
   link(rel='stylesheet', href='/stylesheets/app.css')
   script(src='/javascripts/jquery-2.1.1.js')
+  style.
+    @import url(http://fonts.googleapis.com/css?family=Lobster); 
   body
     .screen(onclick="hidemenu()")
     .menu
       h1 SMDE
       .menu_option
         a(href="/") Inicio
-      .menu_option Iniciar Sesion
-      .menu_option Registrarme    
+      .menu_option 
+        a(href="/login") Iniciar Sesion
+      .menu_option
+        a(href="/signup") Registrarme    
       span.bottom Crafted By 
         b Belon
 
