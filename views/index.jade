@@ -1,6 +1,13 @@
 extends layout
 
 block content
+	script.
+		$(window).scroll(function (event) {
+			var scroll = $(window).scrollTop();
+			$(".ball").css("opacity",1-scroll*.002);
+			
+		});
+	
 	style.
 		.header{
 			background-color:rgba(255,255,255,0);
@@ -9,11 +16,27 @@ block content
 		.header_under{
 			display:none;
 		}
+		.ball{
+			background-color:#fff;
+			width:600px;
+			height:600px;
+			padding-top:190px;
+			border-radius:100%;
+			position:absoute;
+			margin-left:calc(50% - 300px);
+			transition: all .01s;
+			-moz-transition:all .01s;
+			-webkit-transition:all .01s;
+		}
+		.ball h1,.ball h3,.ball p{
+			color:#222;
+		}
 	.section1
-		h1 SMDE
-		h3 Sistema Multi Didáctico Educativo
-		p by 
-			b Belon.
+		.ball 
+			h1 SMDE
+			h3 Sistema Multi Didáctico Educativo
+				p by 
+					b Belon.
 	.section2
 		.bg2
 			.s2.grid
