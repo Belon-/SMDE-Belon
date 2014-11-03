@@ -4,7 +4,8 @@ var mongoose = require('mongoose');
 var Teoria = mongoose.Schema({
 
 	tema: 		 {type: String, required: true},
-	informacion: {type: String, required: true}
+	informacion: {type: String, required: true},
+	materia: {type: String, required: true}
 
 });
 
