@@ -10,7 +10,13 @@
 
 @import "header";
 @import "index";
+@import "grid";
 @import "../sass/textField.css";
+*,body{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box; /* Firefox, other Gecko */
+		box-sizing: border-box; /* Opera/IE 8+ */
+}
 body{
 	padding: 0;
 	margin: 0;
@@ -25,4 +31,5 @@ body{
 	left: 0px;
 	top:0px;
 	display: none;
+
 }

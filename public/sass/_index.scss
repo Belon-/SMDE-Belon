@@ -14,3 +14,79 @@ $squareColor: #00897b;
 	margin: 15px;
 	background-color: $squareColor;
 }
+.section1{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+	background-image: url("/image/index_bg.jpg");
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-size: cover;
+	background-position: bottom;
+	text-align: center;
+	padding-top: 10rem;
+	h1{
+		font-size: 10rem;
+		font-family: "Roboto";
+		word-spacing: 0px;
+		color:#fff;
+		line-height: 0px;
+	}
+	h3{
+		font-size: 1.5rem;
+		font-weight: 100;
+		font-family: "Roboto";
+		color:#fff;
+		line-height: 0px;
+	}
+	p{
+		color:#fff;
+		padding-left: 280px;
+	}
+}
+.section2{
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box; /* Firefox, other Gecko */
+	box-sizing: border-box; /* Opera/IE 8+ */
+	.s2{
+		height: 50%;
+	}
+	.bg2{
+		background-image: url("/image/desk.png");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: top;
+		width: 100%;
+		height: 50%;
+		background-color: red;
+		.s2{
+			padding-left: 100px;
+		}
+	}
+	background-color: #e5e5e3;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	top:100%;
+	h1,h2{
+		font-size: 3rem;
+		text-align: left;
+		font-family: "lobster";
+	}
+	h2{
+		font-size: 2rem;
+	}
+	div{
+		text-align: justify;
+		font-family: "helvetica";
+		font-size: 15px;
+		padding: 13px;
+		font-weight: 100;
+
+	}
+	.color3{
+		background-color: #f0f0ef;
+	}
+}
