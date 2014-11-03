@@ -31,13 +31,12 @@
     background-color: #fff; }
 
 .menu {
-  left: 00px;
-  top: -100%;
+  left: 0px;
   width: 220px;
   position: fixed;
   height: 100%;
   z-index: 99;
-  background-color: rgba(10, 10, 10, 0.9); }
+  background-color: #7cb342; }
   .menu h1 {
     font-family: "Roboto";
     color: #fff;
@@ -46,7 +45,7 @@
   .menu:hover {
     left: 0px; }
   .menu span.bottom {
-    color: #fff;
+    color: #628e34;
     position: absolute;
     text-align: center;
     bottom: 10px;
@@ -194,5 +193,3 @@ body {
   left: 0px;
   top: 0px;
   display: none; }
-
-/*# sourceMappingURL=app.css.map */
