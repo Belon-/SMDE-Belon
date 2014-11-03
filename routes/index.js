@@ -1,8 +1,20 @@
+var alumno;
+var profesor;
+var admin;
+var materia;
+var cuestionario;
+var teoria;
+var escuela;
 
-/*
- * GET home page.
- */
-
+exports.Constructor = function(alumnom, adminm, profesorm, escuelam, materiasm, teoriam, cuestionariosm){
+	alumno = alumnom;
+	profesor = profesorm;
+	admin = adminm;
+	materia = materiasm;
+	cuestionario = cuestionariosm;
+	teoria = teoriam;
+	escuela = escuelam;
+};
 exports.index = function(req, res){
   res.render('index', { title: 'Inicio' });
 };
