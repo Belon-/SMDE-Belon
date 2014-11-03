@@ -9,6 +9,14 @@ var user = require('./routes/user');
 //var signin = require('./routes/signin');
 var http = require('http');
 var path = require('path');
+var mongoose = require('mongoose');
+var alumno = require('./moduls/Alumno');
+var admin = require('./moduls/Admin');
+var profesor = require('./moduls/Profesor');
+var escuela = require('./moduls/Escuela');
+var materias = require('./moduls/Materias');
+var teoria = require('./moduls/Teoria');
+var cuestionarios = require('./moduls/Cuestionarios');
 
 var app = express();
 
@@ -28,6 +36,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
+
+//conect to DB
+mongoose.connect('mongodb://localhost/smde', function(error){
+	if(error){
+		throw error;		
+	}else{
+		console.log('Estas super connectado con mongo bato crazy loco!');
+	}
+});
+
+routes.constructor(alumno, admin, profesor, escuela, materias, teoria, cuestionarios);
+
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
