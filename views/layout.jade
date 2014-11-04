@@ -11,7 +11,7 @@ html
     .screen(onclick="hidemenu()")
     .menu
       h1 SMDE
-      if req.session.datos != undefined
+      if datos == undefined
         .menu_option
           a(href="/") Inicio
         .menu_option 
