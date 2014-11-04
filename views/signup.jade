@@ -25,45 +25,45 @@ block content
 		h1 Registrarme
 		br
 		br
-		form(method="post")
+		form(method='post', action='crea')
 			table(align="center")
 				tr
 					td
 						div.group
-							input(type="email" required)
+							input(type="text", name="mail", required)
 							span.highlight
 							span.bar
 							label Email
 					td
 						div.group
-							input(type="text" required)
+							input(type="text", name="escuela", required)
 							span.highlight
 							span.bar
 							label Escuela
 				tr
 					td
 						div.group
-							input(type="text" required)
+							input(type="text", name="nombre", required)
 							span.highlight
 							span.bar
 							label Nombre
 					td(align="right")
 						div.group
-							input(type="text" required)
+							input(type="text", name="apellido", required)
 							span.highlight
 							span.bar
 							label Apellido
 				tr
 					td
 						div.group
-							input(type="password" required)
+							input(type="password", name="contra", required)
 							span.highlight
 							span.bar
 							label Contraseña
 				tr
 					td(colspan="2" align="center")
-						input(type="submit" value="Registrarme")
+						input(type="submit", value="Registrarme")
 						span &nbsp;
-						input(type="button" onclick="window.location='/login'" value="Iniciar Sesión")
+						input(type="button", onclick="window.location='/login'", value="Iniciar Sesión")
 			br
 			

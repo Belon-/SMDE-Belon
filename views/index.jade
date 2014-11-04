@@ -1,5 +1,5 @@
 extends layout
-
+//hola
 block content
 	script.
 		$(window).scroll(function (event) {
@@ -10,7 +10,8 @@ block content
 	
 	style.
 		.header{
-			background-color:rgba(255,255,255,0);
+			background-color:rgba(0,0,0,.7);
+			height:70px;
 			border-bottom:none;
 		}
 		.header_under{
@@ -37,6 +38,8 @@ block content
 			h3 Sistema Multi Didáctico Educativo
 				p by 
 					b Belon.
+			if datos != undefined
+				h2 #{datos.nombre}
 	.section2
 		.bg2
 			.s2.grid

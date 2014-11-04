@@ -24,6 +24,8 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(express.cookieParser('sabemos todo sobre ti'));
+app.use(express.session());
 app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -52,7 +54,10 @@ routes.constructor(alumno, admin, profesor, escuela, materias, teoria, cuestiona
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.get('/signup', routes.signup);
-app.get('/users', user.list);
+app.get('/u', user.list);
+
+app.post('/crea', routes.crea);
+app.post('/inicia', routes.inicia);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

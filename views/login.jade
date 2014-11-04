@@ -25,25 +25,25 @@ block content
 		h1 Iniciar Sesión
 		br
 		br
-		form(method="post")
+		form(method="post", action='inicia')
 			table(align="center")
 				tr
 					td
 						div.group
-							input(type="email" required)
+							input(type='text', name='mail', required)
 							span.highlight
 							span.bar
 							label Email
 				tr
 					td
 						div.group
-							input(type="password" required)
+							input(type='password', name='contra', required)
 							span.highlight
 							span.bar
 							label Contraseña
 				tr
 					td(colspan="2" align="center")
-						input(type="submit" value="Entrar")
+						input(type="submit", value="Entrar")
 						span &nbsp;
-						input(type="button" onclick="window.location='/signup'" value="Registrarme")
+						input(type="button", onclick="window.location='/signup'", value="Registrarme")
 			br
