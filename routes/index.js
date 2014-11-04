@@ -17,14 +17,21 @@ exports.constructor = function(alumnom, adminm, profesorm, escuelam, materiasm, 
 };
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Inicio',
-  						datos: 	req.session.datos});
+	res.render('index', { title: 'Inicio',
+						datos: 	req.session.datos});
 };
 exports.login = function(req, res){
-  res.render('login', { title: 'Log In' });
+	res.render('login', { title: 'Log In' });
 };
 exports.signup = function(req, res){
-  res.render('signup', { title: 'Sign Up' });
+	res.render('signup', { title: 'Sign Up' });
+};
+
+exports.logout = function(req, res){
+	title: 'Inicio';
+	req.session.datos = null;
+	datos: req.session.datos;
+	res.redirect('/');
 };
 
 exports.crea = function(req, res){
