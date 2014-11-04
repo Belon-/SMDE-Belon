@@ -20,6 +20,10 @@ html
           a(href="/signup") Registrarme  
       else
         .menu_option
+          a(href="/u") #{datos.nombre} #{datos.apellido}
+        .menu_option
+          a(href="/escuela/#{datos.escuela}") #{datos.escuela}
+        .menu_option
           a(href="/logout") Salir
       span.bottom Crafted By 
         b Belon
