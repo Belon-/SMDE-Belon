@@ -8,6 +8,6 @@ exports.list = function(req, res){
     	res.render('students/StudentProfile', { title: 'Inicio',
   							datos: 	req.session.datos});
     }else{
-    	window.location("/signup");
+    	res.redirect('/');
     }
 };

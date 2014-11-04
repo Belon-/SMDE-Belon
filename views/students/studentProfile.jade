@@ -60,10 +60,11 @@ block content
 					td 
 						b Materia
 					td 
-						b Fecha de incripción
-					td 
+						b Inscripcion
+					td
 						b Promedio
 				tr
-					td Cálculo Integral
-					td 10-10-1014
-					td 9.0
+				-each m in datos.materias
+					td m.nombre
+					td m.inicio
+					td m.calif
