@@ -4,5 +4,10 @@
  */
 
 exports.list = function(req, res){
-  res.send("respond with a resource");
+	if(req.session.datos != undefined){
+    	res.render('students/StudentProfile', { title: 'Inicio',
+  							datos: 	req.session.datos});
+    }else{
+    	window.location("/signup");
+    }
 };
