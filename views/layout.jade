@@ -11,12 +11,16 @@ html
     .screen(onclick="hidemenu()")
     .menu
       h1 SMDE
-      .menu_option
-        a(href="/") Inicio
-      .menu_option 
-        a(href="/login") Iniciar Sesion
-      .menu_option
-        a(href="/signup") Registrarme    
+      if req.session.datos != undefined
+        .menu_option
+          a(href="/") Inicio
+        .menu_option 
+          a(href="/login") Iniciar Sesion
+        .menu_option
+          a(href="/signup") Registrarme  
+      else
+        .menu_option
+          a(href="/logout") Salir
       span.bottom Crafted By 
         b Belon
 
