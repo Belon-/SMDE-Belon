@@ -50,7 +50,6 @@ mongoose.connect('mongodb://localhost/smde', function(error){
 
 routes.constructor(alumno, admin, profesor, escuela, materias, teoria, cuestionarios);
 
-
 app.get('/', routes.index);
 app.get('/login', routes.login);
 app.get('/signup', routes.signup);
@@ -61,6 +60,9 @@ app.get('/edit', routes.edit);
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
 app.post('/cambia', routes.cambia);
+
+//esto se va a quitar posteriormente
+app.get('/materialoca',routes.iniciamateria);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title Hola
+  body
+
+    h1 Materias
+    
+    -if(topics.length > 0)
+      table
+        thead
+          tr
+            th Codigo
+            th Materia
+            th Escuela
+            th
+            th
+            th
+        tbody
+          -each item in topics
+            -if(item.escuela == datos.escuela)
+              tr
+                td #{item._id}
+                td #{item.nombre}
+                td #{item.escuela}
+                td 
+    -else
+      p No existen materias registradas

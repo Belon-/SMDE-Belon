@@ -101,3 +101,18 @@ exports.cambia = function(req, res){
 	}
 
 }
+
+//esto se va a quitar posteriormente
+exports.iniciamateria = function(req, res){
+	materia.find({}, function(error, documento){
+		if(error){
+			res.send('Ha surgido un error.');
+		}else{
+			console.log(documento);
+			res.render('iniciamateria', {
+				topics: documento,
+				datos: req.session.datos
+			});
+		}
+	})
+};
