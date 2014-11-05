@@ -3,7 +3,11 @@ extends ../layout
 block content
 	style.
 		.header{
-			height:65px;
+			height:120px;
+			z-index:0;
+		}
+		.header_under{
+			display:none;
 		}
 		.container{
 			z-index:97;
@@ -17,13 +21,13 @@ block content
 			
 		}
 		.tableContainer{
-			width:100%;
+			width: calc(100% - 190px);
+			width: -moz-calc(100% - 190px);
+			width: -webkit-calc(100% - 190px);
 			height:auto;
 			background-color:#fff;
-			position:absolute;
-			left:-425px;
-			margin-left:50%;
 			padding:10px;
+			margin-left:190px;
 			text-align:center;
 			box-shadow:0px 0px 10px #999;
 			top:150px;
@@ -40,31 +44,33 @@ block content
 			padding:15px;
 			cursor:pointer;
 		}
-		
-	.container
-		table
-			tr
-				td(rowspan="2")
-					img(src="/image/Notion.png" width="100px" height="100px")
-				td
-					b #{datos.nombre} &nbsp;
-					span #{datos.apellido}
-			tr
-				td(style="float:left")
-					b #{datos.escuela}
-		div.btn(style="") Modificar
 	
-		.tableContainer
-			table
-				tr
-					td 
-						b Materia
-					td 
-						b Inscripcion
-					td
-						b Promedio
-				tr
-				-each m in datos.materias
-					td m.nombre
-					td m.inicio
-					td m.calif
+	.container_useraccount
+		.alluser_info
+			.account_bgcontainer
+				.option_spancont
+					span
+					span
+					span
+						
+				.img_namecont
+					img.user_img(src="/image/Notion.png")
+
+					.name_user #{datos.nombre} #{datos.apellido}
+						
+					
+			.user_info
+				.tableContainer
+					table
+						tr
+							td 
+								b Materia
+							td 
+								b Inscripcion
+							td
+								b Promedio
+						tr
+						-each m in datos.materias
+							td m.nombre
+							td m.inicio
+							td m.calif

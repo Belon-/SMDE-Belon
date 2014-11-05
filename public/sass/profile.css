@@ -1,0 +1,82 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+.container_useraccount{
+	width: 850px;
+	padding: 20px;
+	margin: 0px auto;
+	position: relative;
+	z-index: 2;
+}
+
+.alluser_info{
+	width: 850px;
+	margin: 0px auto;
+	margin-top: 30px; 
+	padding: 0px;
+	box-shadow: 0px 5px 18px #2e2e2e;
+}
+
+.account_bgcontainer{
+	width: 100%;
+	height: 350px;
+	background-image: url("/image/fondochido.jpg");
+	background-position: center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;	
+}
+
+.img_namecont{
+	width: 100%;
+	height: 150px;
+	position: relative;
+	top: 200px;
+}
+
+.user_img{
+	width: 150px;
+	height: 150px;
+	border-radius: 0px;
+	box-shadow: 0px 2px 5px #000;
+	position: absolute;
+	top: 58px;
+	margin-left: 40px; 
+}
+
+.name_user{
+	color: #fff;
+	font-family: "Roboto";
+	font-size: 32px;
+	font-weight: 400;
+	position: absolute;
+	top: 90px;
+	margin-left: 225px;
+}
+
+
+.user_info{
+	background-color: #E0E0E0;
+	width: 100%;
+	height: 250px;
+	color: #1c1c1c;
+}
+
+.option_spancont{
+	width: 8px;
+	height: 32px;
+	background-color: rgba(0,0,0,0);
+	position: absolute;
+	right: 10px;
+	top: 70px;
+	cursor: pointer;
+}
+
+.option_spancont span{
+	display: block;
+	border-radius: 10px;
+	width: 6px;
+	height: 6px;
+	position: relative;
+	background-color: #fff;
+	margin-bottom: 3px;
+}
+
