@@ -15,6 +15,13 @@ var Alumno = mongoose.Schema({
 			calif:	{type: Number, required: true},
 			inicio: {type: Date, required: true}
 		}
+	],
+	calificaciones: [
+		{
+			id_materia: {type: String, required: true},
+			calif:	{type: String, required: true}
+
+		}
 	]
 
 });
