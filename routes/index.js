@@ -57,15 +57,15 @@ exports.crea = function(req, res){
 
 exports.inicia = function(req, res){
 
-	alumno.findById(req.body.mail, function(error, documento){
-		if(error){
+	alumno.findById(req.body.mail, function(error, documento){//con esta fregadera sacan la info de la DB
+		if(error){//ven si hubo errores al sacar la info
 			res.send('Error al intentar ver el personaje.');
 		}else{
-			if(documento.password == req.body.contra){
-				req.session.datos = documento;
-				res.redirect('/');
+			if(documento.password == req.body.contra){//verifica que las contraseñas coincidan
+				req.session.datos = documento;//guarda la cookie con la info sacada
+				res.redirect('/');//redirecciona al index
 			}else{
-				res.send('La cagastes!!');
+				res.send('La cagastes!!');//en caso de que usuario o contraseña no coincidan
 			}
 		}
 	});
