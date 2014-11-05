@@ -47,7 +47,7 @@ exports.crea = function(req, res){
 	datos.save(function(error, documento){
 		if(error){
 			res.send('Error al registrar al alumno');
-			console.log(error)
+			console.log(error);
 		}else{
 			req.session.datos = documento;
 			res.redirect('/');
@@ -72,3 +72,14 @@ exports.inicia = function(req, res){
 
 }
 
+exports.addQuestion = function(req, res){
+	
+	materia.find({},function(error,documento){
+		if(error){}else{
+			req.session.materia=documento;
+		}
+	});
+	res.render('/questions/add',{title:'Añadir Pregunta',
+								datos:req.session.datos,
+								materias:req.session.materia});
+};

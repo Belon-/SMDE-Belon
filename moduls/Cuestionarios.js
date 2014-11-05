@@ -12,3 +12,12 @@ var Cuestionarios = mongoose.Schema({
 });
 
 module.exports = mongoose.model('cuestionario', Cuestionarios);
+
+
+
+/*Añadir cuestianarios
+	id materia
+	preguntas --Arreglo de preguntas
+	tiempoLimite --Int en minutos
+	Caducidad --Fecha (Date)
+	*/
