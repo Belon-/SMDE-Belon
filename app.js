@@ -56,9 +56,11 @@ app.get('/login', routes.login);
 app.get('/signup', routes.signup);
 app.get('/u', user.list);
 app.get('/logout', routes.logout);
+app.get('/edit', routes.edit);
 
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
+app.post('/cambia', routes.cambia);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

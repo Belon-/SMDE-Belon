@@ -27,6 +27,10 @@ exports.signup = function(req, res){
 	res.render('signup', { title: 'Sign Up' });
 };
 
+exports.edit = function(req, res){
+	res.render('edit', { title: 'Edit' });
+};
+
 exports.logout = function(req, res){
 	title: 'Inicio';
 	req.session.datos = null;
@@ -68,6 +72,32 @@ exports.inicia = function(req, res){
 			}
 		}
 	});
-
 }
 
+exports.cambia = function(req, res){
+
+	var aux = req.session.datos;
+
+	if(aux.password == req.body.excontra){
+		alumno.update({_id: aux._id},{
+			$set:{
+					nombre: req.body.nombre,
+					apellido: req.body.apellido,
+					password: req.body.contra,
+					escuela: req.body.escuela
+				}
+			}, function(error, documento){
+				alumno.findById(aux._id, function(error, documento){
+					if(error){
+						res.send('Error al intentar ver el personaje.');
+					}else{
+						req.session.datos = documento;
+						res.redirect('/');
+					}
+				});
+			});
+	}else{
+		res.send('La cagastes!!');
+	}
+
+}
