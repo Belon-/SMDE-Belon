@@ -36,7 +36,7 @@ exports.logout = function(req, res){
 
 exports.crea = function(req, res){
 	
-	var datos = new alumno({
+	var datos = new alumno({//jalan los datos del jade y los guardan
 		_id: req.body.mail,
 		nombre: req.body.nombre,
 		apellido: req.body.apellido,
@@ -44,13 +44,12 @@ exports.crea = function(req, res){
 		foto: "Alguna foto",
 		escuela: req.body.escuela
 	});
-	datos.save(function(error, documento){
-		if(error){
+	datos.save(function(error, documento){//los guardan en la DB y les devuelve esa parte de la base
+		if(error){//por si la cagan
 			res.send('Error al registrar al alumno');
-			console.log(error)
 		}else{
-			req.session.datos = documento;
-			res.redirect('/');
+			req.session.datos = documento;//guarda la cookie con la info guardada
+			res.redirect('/');//redirecciona al index
 		}
 	});
 };
