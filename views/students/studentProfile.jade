@@ -4,6 +4,7 @@ block content
 	style.
 		.header{
 			height:120px;
+			z-index:0;
 		}
 		.header_under{
 			display:none;
@@ -45,31 +46,31 @@ block content
 		}
 	
 	.container_useraccount
-	.alluser_info
-		.account_bgcontainer
-			.option_spancont
-				span
-				span
-				span
-					
-			.img_namecont
-				img.user_img(src="/image/Notion.png")
+		.alluser_info
+			.account_bgcontainer
+				.option_spancont
+					span
+					span
+					span
+						
+				.img_namecont
+					img.user_img(src="/image/Notion.png")
 
-				.name_user #{datos.nombre} #{datos.apellido}
+					.name_user #{datos.nombre} #{datos.apellido}
+						
 					
-				
-		.user_info
-			.tableContainer
-				table
-					tr
-						td 
-							b Materia
-						td 
-							b Inscripcion
-						td
-							b Promedio
-					tr
-					-each m in datos.materias
-						td m.nombre
-						td m.inicio
-						td m.calif
+			.user_info
+				.tableContainer
+					table
+						tr
+							td 
+								b Materia
+							td 
+								b Inscripcion
+							td
+								b Promedio
+						tr
+						-each m in datos.materias
+							td m.nombre
+							td m.inicio
+							td m.calif
