@@ -13,9 +13,7 @@ html
             th Codigo
             th Materia
             th Escuela
-            th
-            th
-            th
+            th 
         tbody
           -each item in topics
             -if(item.escuela == datos.escuela)
@@ -24,5 +22,8 @@ html
                 td #{item.nombre}
                 td #{item.escuela}
                 td 
+                  form(method='post', action='inscribe')
+                    input(type='text', value='#{item.nombre}', hidden, name='materia')
+                    input(type="submit", value="Inscribe")
     -else
       p No existen materias registradas

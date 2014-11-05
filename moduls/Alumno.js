@@ -13,7 +13,7 @@ var Alumno = mongoose.Schema({
 		{
 			materia:{type: String, required: true},
 			calif:	{type: Number, required: true},
-			inicio: {type: Date, required: true}
+			inicio: {type: Date, default: Date.now}
 		}
 	],
 	calificaciones: [

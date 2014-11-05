@@ -116,3 +116,27 @@ exports.iniciamateria = function(req, res){
 		}
 	})
 };
+
+exports.inscribe = function(req, res){
+
+	var aux = req.session.datos;
+	
+	alumno.update({_id: aux._id},{
+		$set:{
+				materias: {
+					materia: req.body.materia,
+					calif: 0
+				}
+			}
+		}, function(error, documento){
+			alumno.findById(aux._id, function(error, documento){
+				if(error){
+					res.send('Error al inscribir materia '+error);
+				}else{
+					req.session.datos = documento;
+					res.redirect('/');
+				}
+			});
+		});
+
+}

@@ -60,6 +60,7 @@ app.get('/edit', routes.edit);
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
 app.post('/cambia', routes.cambia);
+app.post('/inscribe', routes.inscribe);
 
 //esto se va a quitar posteriormente
 app.get('/materialoca',routes.iniciamateria);
