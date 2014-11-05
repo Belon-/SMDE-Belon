@@ -9,11 +9,18 @@ var Alumno = mongoose.Schema({
 	password: {type: String, required: true},
 	foto: 	{type: String, required: true},//this is not the datatype to the photos
 	escuela: {type: String, required: true},
-	materias: 	[
+	materias: 	[//hay que revisar esta parte, algo no esta bien :/
 		{
 			materia:{type: String, required: true},
 			calif:	{type: Number, required: true},
-			inicio: {type: Date, required: true}
+			inicio: {type: Date, default: Date.now}
+		}
+	],
+	calificaciones: [
+		{
+			id_materia: {type: String, required: true},
+			calif:	{type: String, required: true}
+
 		}
 	]
 

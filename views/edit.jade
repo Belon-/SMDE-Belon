@@ -1,0 +1,69 @@
+extends layout
+
+block content
+	style.
+		.header{
+			height:100px;
+		}
+		.container{
+			z-index:97;
+			width:675px;
+			height:auto;
+			background-color:#fff;
+			position:absolute;
+			left:-345px;
+			margin-left:50%;
+			padding:10px;
+			text-align:center;
+			box-shadow:0px 0px 10px #999;
+		}
+		.container h1{
+			font-family: 'Lobster', cursive;
+		}
+
+	.container
+		h1 Registrarme
+		br
+		br
+		form(method='post', action='cambia')
+			table(align="center")
+				tr
+					td
+						div.group
+							input(type="text", name="excontra", required)
+							span.highlight
+							span.bar
+							label Ex Contraseña
+					td
+						div.group
+							input(type="text", name="escuela", required)
+							span.highlight
+							span.bar
+							label Escuela
+				tr
+					td
+						div.group
+							input(type="text", name="nombre", required)
+							span.highlight
+							span.bar
+							label Nombre
+					td(align="right")
+						div.group
+							input(type="text", name="apellido", required)
+							span.highlight
+							span.bar
+							label Apellido
+				tr
+					td
+						div.group
+							input(type="password", name="contra", required)
+							span.highlight
+							span.bar
+							label Contraseña
+				tr
+					td(colspan="2" align="center")
+						input(type="submit", value="Cambiar")
+						span &nbsp;
+						input(type="button", onclick="window.location='/login'", value="Iniciar Sesión")
+			br
+			
