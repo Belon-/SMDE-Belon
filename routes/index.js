@@ -28,7 +28,8 @@ exports.signup = function(req, res){
 };
 
 exports.edit = function(req, res){
-	res.render('edit', { title: 'Edit' });
+	res.render('edit', { title: 'Edit',
+						datos:req.session.datos});
 };
 
 exports.logout = function(req, res){

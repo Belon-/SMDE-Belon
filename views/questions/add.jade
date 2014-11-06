@@ -21,6 +21,9 @@ block content
 		.container{
 			width:100%;
 		}
+		.header_under{
+			height:30px;
+		}
 	
 	.content
 		h1 Añadir pregunta
@@ -62,8 +65,17 @@ block content
 								span.highlight
 								span.bar
 								label Respuesta C
+					tr
+						td
+							input(type="radio",name="answ")
+						td
+							div.group
+								input(type='text', name='dq', required)
+								span.highlight
+								span.bar
+								label Respuesta d
 				select
-					option #{datos.nombre}
+					option #{topics[0].nombre}
 
 				br
 				input(type="submit" value="Añadir Pregunta")
