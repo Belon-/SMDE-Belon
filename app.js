@@ -56,6 +56,7 @@ app.get('/signup', routes.signup);
 app.get('/u', user.list);
 app.get('/logout', routes.logout);
 app.get('/edit', routes.edit);
+app.get('/cuestionario', routes.cues);
 
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);

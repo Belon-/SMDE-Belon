@@ -37,6 +37,20 @@ exports.logout = function(req, res){
 	datos: req.session.datos;
 	res.redirect('/');
 };
+exports.cues = function(req, res){
+	cuestionario.find({},function(error, documento){
+
+		if(error){
+
+		}else{
+		res.render('students/cues', { title: 'Cuestionarios', datos: documento });
+
+		}
+
+	})
+
+};
+
 
 exports.crea = function(req, res){
 	
