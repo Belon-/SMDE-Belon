@@ -2,12 +2,13 @@ $mainColor: #7cb342;
 
 .header{
 	width: 100%;
-	padding: 18px 0px 21px 0px;
+	padding: 18px 0px 18px 0px;
 	height: 90px;
 	position: fixed;
-	z-index: 10;
+	z-index: 19;
 	background-color: $mainColor;
-	border-bottom: 10px solid darken($mainColor , 10%);
+	border-bottom: 25px solid darken($mainColor , 10%);
+	box-shadow: 0px 2px 12px #757575;
 }
 
 .header_under{
@@ -16,15 +17,14 @@ $mainColor: #7cb342;
 }
 
 .botton_menu{
-	width: 40px;
+	width: 20px;
 	height: 30px;
 	position: relative;
-	left: 12px;
+	left: 18px;
 	cursor: pointer;
-
 	span{
 		display: block;
-		width: 24px;
+		width: 22px;
 		margin: 3px auto;
 		height: 3px;
 		border-radius: 2px;
@@ -32,51 +32,114 @@ $mainColor: #7cb342;
 	}	
 }
 
-.menu{
-	left:00px;
-	top:-100%;
-	width: 220px;
-	position: fixed;
-	height: 100%;
-	z-index: 99;
-	background-color: rgba(10,10,10,0.9);	
-	h1{
-		font-family: "Roboto";
-		color: #fff;
-		font-weight: 100;
-		text-align: center;
-	}
-	&:hover{
-		left: 0px;
-	}
-	span.bottom{
-		color:#fff;
-		position: absolute;
-		text-align: center;
-		bottom: 10px;
-		left: 50px;
-		font-weight: 100;
-	}
-}
+		.menu{
+			width: 320px;
+			height: 100%;
+			padding: 0;
+			background-color: rgba(230,230,230,0.9);
+			color: #f2f2f2;
+			position: fixed;
+			z-index: 199;
+			box-shadow: 3px 0px 15px #2e2e2e;
+			a{
+				color: #1c1c1c;
+				text-decoration: none;
+			}
+			span.bottom{
+				color:#2e2e2e;
+				position: absolute;
+				text-align: center;
+				bottom: 10px;
+				left: 50px;
+				font-weight: 100;
+			}
+		}
 
-.menu_option{
-	width: 90%;
-	color: #f2f2f2;
-	padding: 15px 0px 15px 10%;
-	font-size: 16px;
-	font-weight: 100;
-	text-align: left;
+		.background_menuporfile{
+			width: 100%;
+			height: 192px;
+			background-size: 100% 100%;
+			background-image: url("/image/fondochido.jpg");
+		}
+
+		.close_menu{
+			font-size: 22px;
+			color: #fff;
+			font-family: "Roboto", sans-serif;
+			width: 100%;
+			height: 22px;
+			padding: 10px 0px 6px 0px;
+			font-weight: 200;
+			text-align: right;
+		}
+
+		.close_menu span{
+			display: block;
+			position: relative;
+			left: 281px;
+			width: 22px;
+			cursor: pointer;
+			margin: 0px;
+		}
+
+		.close_menu span:hover{
+			color: #E53935;
+			font-weight: 400;
+		}
+
+		.porfile_imgmenu{
+			width: 100%;
+			height: 58px;
+			padding: 8px 0px 27px 0px;
+			img{
+			width: 58px;
+			height: 58px;
+			margin-left: 25px;
+			border-radius: 100px;
+			box-shadow: 0px 2px 8px #2c2c2c;
+			}
+		}
+
+		.porfile_namemenu{
+			width: auto;
+			padding: 18px;
+			padding-left: 22px;
+			font-family: "Roboto", sans-serif;
+			font-weight: 400;
+			font-size: 20px;
+			color: #fff;
+			background-color: rgba(0,0,0,0.5);
+		}
+
+		.proyect_titlemenu{
+			font-family: "Roboto" , sans-serif;
+			font-size: 25px;
+			font-weight: 400;
+			color: #2e2e2e;
+			padding: 12px;
+			width: auto;
+			text-align: center;
+			cursor: pointer;
+		}
+
+.menu_container{
+			width: auto;
+			padding: 0px;
+			overflow: auto;
+		}		
+
+.option_menu{
+	color: #1c1c1c;
+	font-family: "Roboto" , sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 16px 16px 16px 32px;
+	width: auto;
 	cursor: pointer;
 	@include trans(.5s);
 	&:hover{
-		border-left: 4px solid #fff;
-		background-color: rgba(140,140,140,0.2);
-		width: auto;
-		
+		border-left: 5px solid #1c1c1c;
+		background-color: #bdbdbd;
+		color: #fff;
 	}
-	a{
-		color:#f2f2f2;
-		text-decoration: none;
-	}
-}
-
+}	

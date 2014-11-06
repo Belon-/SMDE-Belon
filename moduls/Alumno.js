@@ -8,6 +8,7 @@ var Alumno = mongoose.Schema({
 	apellido: {type: String, required: true},
 	password: {type: String, required: true},
 	foto: 	{type: String, required: true},//this is not the datatype to the photos
+	cover: 	{type: String, required: true},//this is not the datatype to the photos
 	escuela: {type: String, required: true},
 	materias: 	[//hay que revisar esta parte, algo no esta bien :/
 		{

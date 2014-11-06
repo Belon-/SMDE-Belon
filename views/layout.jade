@@ -9,34 +9,39 @@ html
     @import url(http://fonts.googleapis.com/css?family=Lobster); 
   body
     .screen(onclick="hidemenu()")
-    .menu
-      h1 SMDE
-      if datos == undefined
-        .menu_option
-          a(href="/") Inicio
-        .menu_option 
-          a(href="/login") Iniciar Sesion
-        .menu_option
-          a(href="/signup") Registrarme  
-      else
-        .menu_option
-          a(href="/u") #{datos.nombre} #{datos.apellido}
-        .menu_option
-          a(href="/escuela/#{datos.escuela}") #{datos.escuela}
-        //alrato cambias esto Said
-        .menu_option
-          a(href="/edit") Edita Perfil
-        .menu_option
-          a(href="/logout") Salir
-      span.bottom Crafted By 
-        b Belon
+      .menu
+        .menu_container
+          .proyect_titlemenu SMDE
+        if datos == undefined
+          a(href="/")
+              .option_menu Inicio
+          a(href="/login") 
+            .option_menu Iniciar Sesión
+          a(href="/signup")
+            .option_menu Registrarme 
+        else
+          .background_menuporfile
+            .close_menu
+              span
+            .profile_imgmenu
+              img(src="user_img.png")
+            .porfile_namemenu Usuario
+          a(href="/")
+            .option_menu #{datos.nombre} #{datos.apellido}
+          a(href="/escuela/#{datos.escuela}") 
+            .option_menu #{datos.escuela}
+          a(href="/edit")
+            .option_menu Editar Perfil
+          a(href="/logout")
+            .option_menu Salir  
+        span.bottom Crafted By 
+          b Belon        
 
     .header
       .botton_menu(onclick="showmenu()")
         span
         span
         span
-    .header_under
   
     block content
 
@@ -44,7 +49,7 @@ html
   script.
       function showmenu(){
           $(".menu").animate({top:'0px'});
-          $(".menu").css('box-shadow' ,'2px 0px 15px #000');
+          $(".menu").css('box-shadow' ,'2px 0px 15px #1c1c1c');
           $(".screen").show();
       }
       function hidemenu(){
