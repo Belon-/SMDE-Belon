@@ -2,7 +2,7 @@ doctype html
 html
   head
   title= title
-  link(rel='stylesheet', href='/stylesheets/style.css')
+  
   link(rel='stylesheet', href='/stylesheets/app.css')
   script(src='/javascripts/jquery-2.1.1.js')
   style.
@@ -11,37 +11,36 @@ html
     .screen(onclick="hidemenu()")
       .menu
         .menu_container
-          .proyect_titlemenu SMDE
-        if datos == undefined
-          a(href="/")
-              .option_menu Inicio
-          a(href="/login") 
-            .option_menu Iniciar Sesión
-          a(href="/signup")
-            .option_menu Registrarme 
-        else
-          .background_menuporfile
-            .close_menu
-              span
-            .profile_imgmenu
-              img(src="user_img.png")
-            .porfile_namemenu Usuario
-          a(href="/")
-            .option_menu #{datos.nombre} #{datos.apellido}
-          a(href="/escuela/#{datos.escuela}") 
-            .option_menu #{datos.escuela}
-          a(href="/edit")
-            .option_menu Editar Perfil
-          a(href="/logout")
-            .option_menu Salir  
-        span.bottom Crafted By 
-          b Belon        
-
+          if datos == undefined
+            a(href="/")
+                .option_menu Inicio
+            a(href="/login") 
+              .option_menu Iniciar Sesión
+            a(href="/signup")
+              .option_menu Registrarme 
+          else
+            .background_menuporfile
+              .close_menu
+                span
+              .profile_imgmenu
+                img(src="/image/Notion.png" width="100px" heigth="100px").profile_imgmenu
+              a(href="/u").porfile_namemenu #{datos.nombre} #{datos.apellido}
+            a(href="/u")
+              .option_menu #{datos.nombre} #{datos.apellido}
+            a(href="/escuela/#{datos.escuela}") 
+              .option_menu #{datos.escuela}
+            a(href="/edit")
+              .option_menu Editar Perfil
+            a(href="/logout")
+              .option_menu Salir  
+          span.bottom Crafted By 
+            b Belon
     .header
       .botton_menu(onclick="showmenu()")
         span
         span
         span
+    .header_under
   
     block content
 

@@ -11,3 +11,11 @@ exports.list = function(req, res){
     	res.redirect('/');
     }
 };
+exports.test = function(req, res){
+	if(req.session.datos != undefined){
+    	res.render('students/tests', { title: 'Inicio',
+  							datos: 	req.session.datos});
+    }else{
+    	res.redirect('/');
+    }
+};
