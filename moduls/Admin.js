@@ -7,7 +7,6 @@ var Admin = mongoose.Schema({
 	nombre: {type: String, required: true},
 	apellido: {type: String, required: true},
 	password: {type: String, required: true},
-	foto: 	{type: String, required: true},//this is not the datatype to the photos
 	telefono: {type: String, required: true},
 	escuela: {type: String, required: true},
 	privilegio: {type: String, required: true}
