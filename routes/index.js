@@ -37,6 +37,7 @@ exports.logout = function(req, res){
 	datos: req.session.datos;
 	res.redirect('/');
 };
+
 exports.cues = function(req, res){
 	cuestionario.find({},function(error, documento){
 
@@ -64,7 +65,7 @@ exports.crea = function(req, res){
 	});
 	datos.save(function(error, documento){//los guardan en la DB y les devuelve esa parte de la base
 		if(error){//por si la cagan
-			res.send('Error al registrar al alumno');
+			res.send('Error al registrar al alumno '+ error);
 		}else{
 			req.session.datos = documento;//guarda la cookie con la info guardada
 			res.redirect('/');//redirecciona al index
