@@ -3,14 +3,12 @@ var mongoose = require('mongoose');
 
 var Cuestionarios = mongoose.Schema({
 
-	num: {type: Number, required: true},
-	materia: {type: String, required: true},
-	pregunta: 	{type: String, required: true},
-	a: {type: String, v: false},
-	b: {type: String, v: false},
-	c: {type: String, v: true},
-	d: {type: String, v: false},
-
+	pregunta: 	{type: String, required: true},//the id is a topic
+	a: {t: {type: String}, v: {type: String}},
+	b: {t: {type: String}, v: {type: String}},
+	c: {t: {type: String}, v: {type: String}},
+	d: {t: {type: String}, v: {type: String}},
+	materia: {type: String, required: true}
 });
 
 module.exports = mongoose.model('cuestionario', Cuestionarios);

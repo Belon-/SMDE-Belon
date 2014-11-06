@@ -39,10 +39,15 @@ exports.logout = function(req, res){
 };
 exports.cues = function(req, res){
 	cuestionario.find({},function(error, documento){
-
 		if(error){
 
 		}else{
+			/*function aleatorio(min:Number, max:Number):Number{
+				var num: Number= Math.floor(Math.random()*(max-min+1))+min;
+				return num;
+				var numeroNuevo:Number=aleatorio(1,10);
+			}*/
+
 		res.render('students/cues', { title: 'Cuestionarios', datos: documento });
 
 		}

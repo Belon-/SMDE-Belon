@@ -1,5 +1,13 @@
 extends ../layout
 
+script.
+	function aleatorio(min:Number, max:Number):Number{
+					var num: Number= Math.floor(Math.random()*(max-min+1))+min;
+					return num;
+					var numeroNuevo:Number=aleatorio(1,10);
+					alert("Número aleatorio"+numeroNuevo);
+				}
+
 block content
 	br
 	br
@@ -9,6 +17,8 @@ block content
 	br
 	br
 	br
-	h1 Hola hijos de !#$"#$%&/!!
-	p #{datos}
+	h1 Hola hijos de !#$"#$%/!!
+	
+	-each tumama in datos
+		p #{tumama.pregunta}
 	
