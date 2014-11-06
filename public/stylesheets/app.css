@@ -41,7 +41,6 @@
   z-index: 199;
   box-shadow: 3px 0px 15px #2e2e2e; }
   .menu a {
-    color: #1c1c1c;
     text-decoration: none; }
   .menu span.bottom {
     color: #2e2e2e;
@@ -50,6 +49,8 @@
     bottom: 10px;
     left: 50px;
     font-weight: 100; }
+  .menu img.profile_imgmenu {
+    border-radius: 100%; }
 
 .background_menuporfile {
   width: 100%;
@@ -91,13 +92,14 @@
     box-shadow: 0px 2px 8px #2c2c2c; }
 
 .porfile_namemenu {
-  width: auto;
+  width: 100%;
   padding: 18px;
   padding-left: 22px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #fff;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.5); }
 
 .proyect_titlemenu {

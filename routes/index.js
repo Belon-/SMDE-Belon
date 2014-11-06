@@ -28,7 +28,8 @@ exports.signup = function(req, res){
 };
 
 exports.edit = function(req, res){
-	res.render('edit', { title: 'Edit' });
+	res.render('edit', { title: 'Edit',
+						datos:req.session.datos});
 };
 
 exports.logout = function(req, res){
@@ -37,6 +38,7 @@ exports.logout = function(req, res){
 	datos: req.session.datos;
 	res.redirect('/');
 };
+
 exports.cues = function(req, res){
 	cuestionario.find({},function(error, documento){
 		if(error){
@@ -69,7 +71,7 @@ exports.crea = function(req, res){
 	});
 	datos.save(function(error, documento){//los guardan en la DB y les devuelve esa parte de la base
 		if(error){//por si la cagan
-			res.send('Error al registrar al alumno');
+			res.send('Error al registrar al alumno '+ error);
 		}else{
 			req.session.datos = documento;//guarda la cookie con la info guardada
 			res.redirect('/');//redirecciona al index
@@ -79,15 +81,49 @@ exports.crea = function(req, res){
 
 exports.inicia = function(req, res){
 
-	alumno.findById(req.body.mail, function(error, documento){//con esta fregadera sacan la info de la DB
-		if(error){//ven si hubo errores al sacar la info
+	alumno.findById(req.body.mail, function(error, documento){
+		if(error){
 			res.send('Error al intentar ver el personaje.');
 		}else{
-			if(documento.password == req.body.contra){//verifica que las contraseñas coincidan
-				req.session.datos = documento;//guarda la cookie con la info sacada
-				res.redirect('/');//redirecciona al index
+			if(documento == null){
+				profesor.findById(req.body.mail, function(error2, documento2){
+					if(error2){
+						res.send('Error al intentar ver el personaje.');
+					}else{
+						if(documento2 == null){
+							admin.findById(req.body.mail, function(error3, documento3){
+								if(error3){
+									res.send('Error al intentar ver el personaje.');
+								}else{
+									if(documento3 == null){
+										res.send('La cagastes!!');
+									}else{
+										if(documento3.password == req.body.contra){
+											req.session.datos = documento3;
+											res.redirect('/');
+										}else{
+											res.send('La cagastes!!');
+										}
+									}
+								}
+							});
+						}else{
+							if(documento2.password == req.body.contra){
+								req.session.datos = documento2;
+								res.redirect('/');
+							}else{
+								res.send('La cagastes!!');
+							}
+						}
+					}
+				});
 			}else{
-				res.send('La cagastes!!');//en caso de que usuario o contraseña no coincidan
+				if(documento.password == req.body.contra){
+					req.session.datos = documento;
+					res.redirect('/');
+				}else{
+					res.send('La cagastes!!');
+				}
 			}
 		}
 	});

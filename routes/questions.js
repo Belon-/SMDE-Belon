@@ -16,3 +16,20 @@ exports.constructor = function(alumnom, adminm, profesorm, escuelam, materiasm, 
 	escuela = escuelam;
 };
 
+exports.test = function(req, res){
+	res.render('students/tests', { title: 'Exam',
+						datos: 	req.session.datos});
+};
+exports.addQ = function(req, res){
+	materia.find({},function(error, documento){
+
+		if(error){}else{
+			console.log(documento);
+			res.render('questions/add', { title: 'Exam',
+						datos: 	req.session.datos,
+						topics: documento});
+
+		}
+	});
+
+};

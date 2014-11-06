@@ -42,7 +42,6 @@ $mainColor: #7cb342;
 			z-index: 199;
 			box-shadow: 3px 0px 15px #2e2e2e;
 			a{
-				color: #1c1c1c;
 				text-decoration: none;
 			}
 			span.bottom{
@@ -52,6 +51,9 @@ $mainColor: #7cb342;
 				bottom: 10px;
 				left: 50px;
 				font-weight: 100;
+			}
+			img.profile_imgmenu{
+				border-radius: 100%;
 			}
 		}
 
@@ -101,13 +103,14 @@ $mainColor: #7cb342;
 		}
 
 		.porfile_namemenu{
-			width: auto;
+			width: 100%;
 			padding: 18px;
 			padding-left: 22px;
 			font-family: "Roboto", sans-serif;
 			font-weight: 400;
 			font-size: 20px;
 			color: #fff;
+			position: absolute;	
 			background-color: rgba(0,0,0,0.5);
 		}
 

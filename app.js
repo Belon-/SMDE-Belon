@@ -6,6 +6,7 @@
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
+var stdnts = require('./routes/questions');
 //var signin = require('./routes/signin');
 var http = require('http');
 var path = require('path');
@@ -49,6 +50,7 @@ mongoose.connect('mongodb://localhost/smde', function(error){
 });
 
 routes.constructor(alumno, admin, profesor, escuela, materias, teoria, cuestionarios);
+stdnts.constructor(alumno, admin, profesor, escuela, materias, teoria, cuestionarios);
 
 app.get('/', routes.index);
 app.get('/login', routes.login);
@@ -57,6 +59,8 @@ app.get('/u', user.list);
 app.get('/logout', routes.logout);
 app.get('/edit', routes.edit);
 app.get('/cuestionario', routes.cues);
+app.get('/std/test',stdnts.test);
+app.get('/quest/add',stdnts.addQ);
 
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
