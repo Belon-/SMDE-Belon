@@ -1,0 +1,237 @@
+$primary-theme-color: #00897b;
+$dark-theme: if(lightness($primary-theme-color) > 65%, false, true);
+$text-color: if($dark-theme, #FFF, #222);
+
+body {
+
+	background-color: #333;
+	overflow: hidden;
+}
+
+ul { margin: 0 !important }
+
+.topbar {
+
+	position: absolute;
+	width: 100%;
+	top: 0; left: 0;
+	z-index: 10;
+}
+
+.topbar-wrapper {
+
+	position: relative;
+	width: calc(100% - 2rem);
+	height: inherit;
+	max-width: 1200px;
+	margin: 0 auto;
+	line-height: inherit;
+}
+
+%bar {
+
+	position: relative;
+	width: 100%;
+	height: 50px;
+}
+
+.informationbar {
+
+	@extend %bar;
+	background-color: $primary-theme-color;
+	line-height: 50px;
+	color: $text-color;
+	box-shadow: 0 -4px darken($primary-theme-color, 7%) inset;
+
+	span {
+		color: if($dark-theme, darken($text-color, 10%), $text-color);
+		cursor: pointer;
+		&:hover { color: if($dark-theme, $text-color, lighten($text-color, 10%)) }
+	}
+}
+
+#toolbar {
+
+	@extend %bar;
+	display: none;
+	@include background-opacity(darken($primary-theme-color, 15%), 0.95);
+	color: lighten($text-color, 5%);
+
+	.arrow {
+
+		position: absolute;
+		width: 0; height: 0;
+		margin-top: -10px;
+		top: 0;	right: 0.65rem;
+		border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 10px solid darken($primary-theme-color, 7%);
+	}
+	%toolbar-nav {
+
+		position: absolute;
+		height: 100%;
+		line-height: 50px;
+		padding: 0 0.25rem;
+		@include background-opacity($primary-theme-color, 0.9);
+		cursor: pointer;
+		z-index: 1;
+	}
+	span.nav-left-btn{ @extend %toolbar-nav; right: 0; }
+	span.nav-right-btn{ @extend %toolbar-nav; left: 0; }
+}
+
+.tools {
+	
+	position: relative;
+	height: 100%;
+	margin: 0;
+	white-space: nowrap;
+	
+	&>li { 
+		
+		position: relative;
+		display: inline-block;
+		width: 2rem;
+		height: inherit;
+		text-align: center;
+		line-height: 50px;
+		list-style: none;
+		box-shadow: 0 0 $text-color inset;
+		cursor: pointer;
+		transition: 200ms;
+
+		&:not(.spacer):not(.dropdown) {
+			
+			&:hover {
+				background-color: darken($primary-theme-color, 7%);
+				@include prefix('transform', translateY(-2px));
+			}
+			&:active {
+				background-color: darken($primary-theme-color, 20%);
+				@include prefix('transform', translateY(0px));
+			}
+		}
+
+		&.activable.active {
+			
+			background-color: darken($primary-theme-color, 7%);
+			box-shadow: 0 -2px $text-color inset;
+			color: $text-color;
+		}
+
+		&.spacer {
+			width: 1px;
+			margin: 0;
+			cursor: default;
+			background-color: $primary-theme-color;
+			color: transparent;
+			&:after { content: "." }
+		}
+
+		&.dropdown {
+
+			width: auto;
+			padding: 0 0.5rem;
+			
+			ul { 
+				position: absolute;
+				display: none;
+				left: 0;
+			}
+
+			li { 
+				display: block;
+				width: auto;
+				height: 30px;
+				background-color: darken($primary-theme-color, 15%);
+				line-height: 30px;
+				padding: 0 0.5rem;
+				font-size: 80%;
+				text-align: left;
+				transition: 200ms;
+
+				&.activable.active { box-shadow: 0 0 $text-color inset; &.active { box-shadow: 2px 0 $text-color inset} }
+
+				&:hover { @include prefix('transform', translateX(4px)) }
+
+				&:active {
+
+					@include prefix('transform', translateX(0));
+					background-color: darken($primary-theme-color, 20%);
+				}
+			}
+
+			&:hover {
+				background-color: darken($primary-theme-color, 7%);
+				ul { display: block }
+			}
+		}
+	}
+}
+
+#toolbar-btn {
+
+	position: relative;
+	float: right;
+	width: 1.5rem;
+	height: 100%;
+	margin: 0 0.5rem;
+	transition: 500ms;
+	cursor: pointer;
+
+	&.x {
+
+		span:nth-child(1) { top: 50%; @include prefix('transform', rotate(45deg)) }
+		span:nth-child(2) { opacity: 0; }
+		span:nth-child(3) { top: 50%; @include prefix('transform', rotate(-45deg)) }
+	}
+
+	span {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		margin-top: -1px;
+		background-color: $text-color;
+		transition: 250ms;
+	}
+	span:nth-child(1) { top: calc(50% - 5px) }
+	span:nth-child(2) { top: 50% }
+	span:nth-child(3) { top: calc(50% + 5px) }
+}
+
+#info-btn {
+
+	position: relative;
+	float: right;
+	font-size: 1.3rem;
+	margin: 0 0.5rem;
+	cursor: pointer;
+}
+
+.page {
+
+	position: relative;
+	width: 9.5in;
+	min-height: 11in;
+	padding: 0.5in;
+	margin-top: 100px;
+	margin: 0 auto;
+	background-color: #EEE;
+	box-shadow: 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-container {
+
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;  
+}
+
+.page-wrapper {
+
+	position: relative;
+	min-width: 100%;
+	height: auto;
+	padding: calc(100px + 2rem) 1rem 2rem 1rem;
+}
+//Code by Mario Ivan G. Flores @ notion.mx 

@@ -7,10 +7,33 @@
 	-moz-transition:all $time;
 	-webkit-transition:all $time;
 }
+@mixin prefix($property, $value) {
 
+	-webkit-#{$property}: $value;
+		 -moz-#{$property}: $value;
+		      #{$property}: $value;
+}
+
+@mixin background-opacity($color, $opacity: 0.5) { background-color: rgba($color, $opacity) }
+
+@mixin toolbar-hover-color($color, $percentage, $dark-theme: true, $cursor: pointer) { 
+	@if $dark-theme {
+		color: $color;
+		cursor: $cursor;
+		&>i:hover {
+			@include prefix('transform', translateY(2px));
+			text-shadow: 1px 1px #000;
+		}
+	} @else {
+		color: $color;
+		cursor: $cursor;
+		&:hover { color: lighten($color, $percentage); }
+	}
+}
 @import "header";
 @import "index";
 @import "grid";
+@import "editor";
 @import "../sass/textField.css";
 @import "../sass/profile.css";
 *,body{

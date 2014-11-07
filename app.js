@@ -61,6 +61,8 @@ app.get('/edit', routes.edit);
 app.get('/cuestionario', routes.cues);
 app.get('/std/test',stdnts.test);
 app.get('/quest/add',stdnts.addQ);
+app.get('/theory/add',stdnts.addTheory);
+app.get('/theory/base',stdnts.base);
 
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);

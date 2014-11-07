@@ -81,3 +81,11 @@ exports.add = function(req, res){
 		}
 	});
 };
+exports.addTheory=function(req,res){
+	res.render('editor/editor',{ title: 'add',
+						datos: 	req.session.datos});
+}
+exports.base=function(req,res){
+	res.render('editor/base',{ title: 'base',
+						datos: 	req.session.datos});
+}

@@ -1,0 +1,95 @@
+
+extends ../layout
+
+block content
+  script(src='/javascripts/editor.js')
+  script(src='/javascripts/editor_actions.js')
+  link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
+  style.
+    .header{
+      display:none;
+    }
+    #toolbar{
+      height:auto;
+    }
+    .page-wrapper{
+      padding-top:0px;
+    }
+
+  .topbar
+    .informationbar
+      .topbar-wrapper
+        span.notebook [Title]
+        span#toolbar-btn
+          span
+          span
+          span
+        span#info-btn
+          i.fi-info
+    #toolbar
+      span.nav-right-btn
+        i.fa.fa-angle-left
+      span.nav-left-btn
+        i.fa.fa-angle-right
+      .topbar-wrapper
+        span.arrow
+        ul.tools
+          li(onclick="undo()")
+            i.fa.fa-undo
+          li(onclick="redo()")
+            i.fa.fa-repeat 
+          li.spacer
+          li.activable(onclick="bold()")
+            i.fa.fa-bold
+          li.activable(onclick="italic")
+            i.fa.fa-italic
+          li.activable(onclick="underline()")
+            i.fa.fa-underline
+          li.spacer
+          li.activable(onclick="left()")
+            i.fa.fa-align-left
+          li.activable(onclick="center()")
+            i.fa.fa-align-center
+          li.activable(onclick="right()")
+            i.fa.fa-align-right
+          li.activable(onclick="justify()")
+            i.fa.fa-align-justify
+          li.spacer
+          li.dropdown
+            i.fa.fa-caret-down
+            ul
+              li.activable(onclick="set_size(6); center()") Título
+              li.activable(onclick="set_size(5); bold()") Subtítulo
+              li.activable(onclick="set_size(3)") Cuerpo
+              li.activable(onclick="set_size(3); italic()") Cita
+          
+          <li class="spacer">
+          <li><i class="fa fa-font" onclick="forecolor()"></i>
+          <li><i class="fa fa-font" onclick="backcolor()"></i>
+          <li class="spacer">
+          <li class="activable" onclik="unordered_list()"><i class="fa fa-list-ul"></i>
+          <li class="activable" onclick="ordered_list()"><i class="fa fa-list-ol"></i>
+          <li class="spacer">
+          <li onclick="link()" ><i class="fa fa-link fa-flip-horizontal"></i>
+          <li onclick="unlink()" ><i class="fa fa-chain-broken"></i>
+          <li class="spacer">
+          <li onclick="create_table()" ><i class="fa fa-th"></i>
+          <li onclick="create_table_with_header()"><i class="fa fa-table"></i>
+          <li class="spacer"> 
+          <li onclick="image()"><i class="fa fa-image"></i>
+          <li onclick="print_document()"><i class="fa fa-print"></i>
+  .page-container
+    .page-wrapper
+      iframe(src="/theory/base" name="richTextField" id="richTextField" class="page" style="display:block" frameborder="0")
+      form#submit_form(style="opacity:0")
+        textarea(name="textArea")
+        input(type="text" name="jason" id="jason")
+  
+  .hidden
+    input(type="color" id="iForeColor" onchange="changeF()")
+    input(type="color" id="iBackColor" onchange="changeB()")
+
+  script.
+    $(document).ready(function(){
+        setTimeout(function(){iframe_on();}, 4000);
+      });
