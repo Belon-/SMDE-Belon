@@ -7,13 +7,32 @@ block content
   link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
   style.
     .header{
+      height:70px;
+      z-index:59;
+      border-bottom:none;
+      box-shadow:none;
+    }
+    .proyect_name{
       display:none;
     }
     #toolbar{
       height:auto;
+      position:fixed;
     }
     .page-wrapper{
-      padding-top:0px;
+      padding-top:110px;
+
+    }
+    .topbar{
+      padding-top:55px;
+
+    }
+    .richTextField{
+      z-index:2;
+    }
+    .hidden{
+      position:fixed;
+      bottom:-100px;
     }
 
   .topbar
@@ -37,7 +56,7 @@ block content
           li(onclick="undo()")
             i.fa.fa-undo
           li(onclick="redo()")
-            i.fa.fa-repeat 
+            i.fa.fa-repeat
           li.spacer
           li.activable(onclick="bold()")
             i.fa.fa-bold
@@ -62,7 +81,7 @@ block content
               li.activable(onclick="set_size(5); bold()") Subtítulo
               li.activable(onclick="set_size(3)") Cuerpo
               li.activable(onclick="set_size(3); italic()") Cita
-          
+
           <li class="spacer">
           <li><i class="fa fa-font" onclick="forecolor()"></i>
           <li><i class="fa fa-font" onclick="backcolor()"></i>
@@ -75,7 +94,7 @@ block content
           <li class="spacer">
           <li onclick="create_table()" ><i class="fa fa-th"></i>
           <li onclick="create_table_with_header()"><i class="fa fa-table"></i>
-          <li class="spacer"> 
+          <li class="spacer">
           <li onclick="image()"><i class="fa fa-image"></i>
           <li onclick="print_document()"><i class="fa fa-print"></i>
   .page-container
@@ -84,7 +103,7 @@ block content
       form#submit_form(style="opacity:0")
         textarea(name="textArea")
         input(type="text" name="jason" id="jason")
-  
+
   .hidden
     input(type="color" id="iForeColor" onchange="changeF()")
     input(type="color" id="iBackColor" onchange="changeB()")

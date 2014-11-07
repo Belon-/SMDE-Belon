@@ -52,14 +52,20 @@
 .menu {
   width: 330px;
   height: 100%;
+  left: -330px;
+  top: 0px;
   padding: 0;
   background-color: rgba(230, 230, 230, 0.9);
   color: #f2f2f2;
   min-height: 400px;
   overflow: auto;
   position: fixed;
+  display: block;
   z-index: 199;
-  box-shadow: 3px 0px 15px #2e2e2e; }
+  box-shadow: 3px 0px 15px #2e2e2e;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
   .menu a {
     text-decoration: none;
     padding: 0px;
@@ -238,14 +244,13 @@
   height: auto; }
 
 body {
-  background-color: #333;
-  overflow: hidden; }
+  background-color: #333; }
 
 ul {
   margin: 0 !important; }
 
 .topbar {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -265,10 +270,10 @@ ul {
   height: 50px; }
 
 .informationbar {
-  background-color: #00897b;
+  background-color: #689F38;
   line-height: 50px;
   color: #FFF;
-  box-shadow: 0 -4px #00655b inset; }
+  box-shadow: 0 -4px #57852f inset; }
   .informationbar span {
     color: #e6e6e6;
     cursor: pointer; }
@@ -277,7 +282,7 @@ ul {
 
 #toolbar {
   display: none;
-  background-color: rgba(0, 61, 54, 0.95);
+  background-color: rgba(67, 102, 36, 0.95);
   color: white; }
   #toolbar .arrow {
     position: absolute;
@@ -288,13 +293,13 @@ ul {
     right: 0.65rem;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #00655b; }
+    border-bottom: 10px solid #57852f; }
   #toolbar span.nav-left-btn, #toolbar span.nav-right-btn {
     position: absolute;
     height: 100%;
     line-height: 50px;
     padding: 0 0.25rem;
-    background-color: rgba(0, 137, 123, 0.9);
+    background-color: rgba(104, 159, 56, 0.9);
     cursor: pointer;
     z-index: 1; }
   #toolbar span.nav-left-btn {
@@ -319,24 +324,24 @@ ul {
     cursor: pointer;
     transition: 200ms; }
     .tools > li:not(.spacer):not(.dropdown):hover {
-      background-color: #00655b;
+      background-color: #57852f;
       -webkit-transform: translateY(-2px);
       -moz-transform: translateY(-2px);
       transform: translateY(-2px); }
     .tools > li:not(.spacer):not(.dropdown):active {
-      background-color: #00231f;
+      background-color: #37541d;
       -webkit-transform: translateY(0px);
       -moz-transform: translateY(0px);
       transform: translateY(0px); }
     .tools > li.activable.active {
-      background-color: #00655b;
+      background-color: #57852f;
       box-shadow: 0 -2px #FFF inset;
       color: #FFF; }
     .tools > li.spacer {
       width: 1px;
       margin: 0;
       cursor: default;
-      background-color: #00897b;
+      background-color: #689F38;
       color: transparent; }
       .tools > li.spacer:after {
         content: "."; }
@@ -351,7 +356,7 @@ ul {
         display: block;
         width: auto;
         height: 30px;
-        background-color: #003d36;
+        background-color: #436624;
         line-height: 30px;
         padding: 0 0.5rem;
         font-size: 80%;
@@ -369,9 +374,9 @@ ul {
           -webkit-transform: translateX(0);
           -moz-transform: translateX(0);
           transform: translateX(0);
-          background-color: #00231f; }
+          background-color: #37541d; }
       .tools > li.dropdown:hover {
-        background-color: #00655b; }
+        background-color: #57852f; }
         .tools > li.dropdown:hover ul {
           display: block; }
 
@@ -506,14 +511,20 @@ body {
 .menu {
   width: 330px;
   height: 100%;
+  left: -330px;
+  top: 0px;
   padding: 0;
   background-color: rgba(230, 230, 230, 0.9);
   color: #f2f2f2;
   min-height: 400px;
   overflow: auto;
   position: fixed;
+  display: block;
   z-index: 199;
-  box-shadow: 3px 0px 15px #2e2e2e; }
+  box-shadow: 3px 0px 15px #2e2e2e;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
   .menu a {
     text-decoration: none;
     padding: 0px;

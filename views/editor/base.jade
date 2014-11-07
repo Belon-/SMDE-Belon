@@ -4,12 +4,19 @@ html
     script(src='/javascripts/editor.js')
     script(src='/javascripts/editor_actions.js')
     script(src='/javascripts/jquery-ui.min.js')
-    link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    style.
+      body{
+        background-color:#fff;
+        margin:10px;
+      }
+        link(href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet")
 
-    </div>
     script.
       $(document).ready(function(){
         $('img').each(function(){
           $(this).draggable();
         });
       });
+
+    <h1 align="center">SMDE</h1>

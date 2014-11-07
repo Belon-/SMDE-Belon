@@ -2,60 +2,60 @@ doctype html
 html
   head
   title= title
-  
+
   link(rel='stylesheet', href='/stylesheets/app.css')
   script(src='/javascripts/jquery-2.1.1.js')
   style.
     @import url(http://fonts.googleapis.com/css?family=Lobster);
   body
     .screen(onclick="hidemenu()")
-      .menu
-        .menu_container
-          if datos == undefined
-            .proyect_titlemenu SMDE
-            a(href="/")
-              .option_menu Inicio
-            a(href="/login") 
-              .option_menu Iniciar Sesión
-            a(href="/signup")
-              .option_menu Registrarme 
-          else
-            .background_menuporfile
-              .profile_imgmenu
-                img(src="/image/Notion.png").profile_imgmenu
-              a(href="/u")
-                .profile_namemenu #{datos.nombre} #{datos.apellido}
-            .proyect_titlemenu SMDE
-            a(href="/")
-              .option_menu Inicio
+    .menu
+      .menu_container
+        if datos == undefined
+          .proyect_titlemenu SMDE
+          a(href="/")
+            .option_menu Inicio
+          a(href="/login")
+            .option_menu Iniciar Sesión
+          a(href="/signup")
+            .option_menu Registrarme
+        else
+          .background_menuporfile
+            .profile_imgmenu
+              img(src="/image/Notion.png").profile_imgmenu
             a(href="/u")
-              .option_menu #{datos.nombre} #{datos.apellido}
-            a(href="/escuela/#{datos.escuela}") 
-              .option_menu #{datos.escuela}
-            a(href="/edit")
-              .option_menu Editar Perfil
-            a(href="/logout")
-              .option_menu Salir  
-          span.bottom Crafted By 
-            b Belon
+              .profile_namemenu #{datos.nombre} #{datos.apellido}
+          .proyect_titlemenu SMDE
+          a(href="/")
+            .option_menu Inicio
+          a(href="/u")
+            .option_menu #{datos.nombre} #{datos.apellido}
+          a(href="/escuela/#{datos.escuela}")
+            .option_menu #{datos.escuela}
+          a(href="/edit")
+            .option_menu Editar Perfil
+          a(href="/logout")
+            .option_menu Salir
+        span.bottom Crafted By
+          b Belon
     .header
       .botton_menu(onclick="showmenu()")
         span
         span
         span
       .proyect_name SMDE
-  
+
     block content
 
 
   script.
       function showmenu(){
-          $(".menu").animate({top:'0px'});
+          $(".menu").animate({left:'0px'});
           $(".menu").css('box-shadow' ,'2px 0px 15px #1c1c1c');
           $(".screen").show();
       }
       function hidemenu(){
-          $(".menu").animate({top:'-100%'});
+          $(".menu").animate({left:'-330px'});
           $(".menu").css('box-shadow' ,'none');
           $(".screen").hide();
       }

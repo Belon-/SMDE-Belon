@@ -23,12 +23,13 @@ $mainColor: #689F38;
 	span{
 		display: block;
 		width: 18px;
+
 		height: 2px;
 		margin: 0px auto;
 		background-color: #f2f2f2;
 		margin-bottom: 3px;
 		border-radius: 2px;
-	}	
+	}
 }
 
 .proyect_name{
@@ -48,14 +49,18 @@ $mainColor: #689F38;
 .menu{
 	width: 330px;
 	height: 100%;
+	left:-330px;
+	top:0px;
 	padding: 0;
 	background-color: rgba(230,230,230,0.9);
 	color: #f2f2f2;
 	min-height: 400px;
 	overflow: auto;
 	position: fixed;
+	display:block;
 	z-index: 199;
 	box-shadow: 3px 0px 15px #2e2e2e;
+	@include trans(.5s);
 	a{
 		text-decoration: none;
 		padding: 0px;
@@ -78,7 +83,7 @@ $mainColor: #689F38;
 
 		.background_menuporfile{
 			width: 100%;
-			padding: 0; 
+			padding: 0;
 			background-size: 100% 100%;
 			background-image: url("/image/fondochido.jpg");
 		}
@@ -124,7 +129,7 @@ $mainColor: #689F38;
 			width: auto;
 			padding: 0px;
 			overflow: auto;
-		}		
+		}
 
 .option_menu{
 	color: #1c1c1c;

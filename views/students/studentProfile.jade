@@ -13,6 +13,12 @@ block content
       text-decoration:none;
       color:#000;
     }
+    #subjects{
+      display:none;
+    }
+    .user_personalinfo{
+      display:block;
+    }
   div.container_useraccount
     div.alluser_info
       div.account_bgcontainer
@@ -27,25 +33,41 @@ block content
             div.name_user #{datos.nombre} #{datos.apellido}
       div.user_info
         div.porfile_options
-          div.porfile_items Perfil
-          div.porfile_items Materias
+          div.porfile_items(onclick="inf()") Perfil
+          div.porfile_items(onclick="mat()") Materias
           div.porfile_items
             a(href="/edit") Configuración
         div.user_personalinfo
           span Escuela:
           p #{datos.escuela}
-        -each m in datos.materias
-          div.cont_usersubjects
-            div.user_subjects
-              div.subimg_cont
-                span#circle
-              div.subdats_cont
-                div.subject_title
-                  span #{m.materia}
-                div.subject_info
-                  span.subject_infoinner
-                    b Promedio:
-                    span #{m.calif}
-                  span.subject_infoinner
-                    b Fecha de Inicio:
-                    span #{m.inicio}
+        #subjects
+          -if(datos.materias == undefined || datos.materias == "")
+            div.cont_usersubjects
+              div.user_subjects
+                div.subimg_cont
+                  h3(style="color:#fff") No hay materias registradas
+          -else
+            -each m in datos.materias
+              div.cont_usersubjects
+                div.user_subjects
+                  div.subimg_cont
+                    span#circle
+                  div.subdats_cont
+                    div.subject_title
+                      span #{m.materia}
+                    div.subject_info
+                      span.subject_infoinner
+                        b Promedio:
+                        span #{m.calif}
+                      span.subject_infoinner
+                        b Fecha de Inicio:
+                        span #{m.inicio}
+    script.
+      function mat(){
+        $(".user_personalinfo").hide();
+        $("#subjects").show();
+      }
+      function inf(){
+        $(".user_personalinfo").show();
+        $("#subjects").hide();
+      }
