@@ -21,7 +21,8 @@
 body{
 	padding: 0;
 	margin: 0;
-	background-color: #f2f2f2;
+	background-color: #BDBDBD;
+	font-family: sans-serif;
 }
 .screen{
 	width: 100%;
@@ -34,3 +35,9 @@ body{
 	display: none;
 
 }
+
+.each_containerblock{
+	padding: 50px;
+	padding-top: 80px;
+	margin: 0px auto;
+}	

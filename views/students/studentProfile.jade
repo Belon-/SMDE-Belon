@@ -1,78 +1,58 @@
 extends ../layout
 
 block content
-	link(rel='stylesheet', href='/stylesheets/style.css')
-	style.
-		.account_bgcontainer{
-			background-image: url("/image/fondochido.jpg");
-		}
-		.container{
-			z-index:97;
-			width:850px;
-			height:auto;
-			position:absolute;
-			left:-425px;
-			margin-left:50%;
-			padding:10px;
-			text-align:center;
-			
-		}
-		.tableContainer{
-			width: calc(100% - 190px);
-			width: -moz-calc(100% - 190px);
-			width: -webkit-calc(100% - 190px);
-			height:auto;
-			background-color:#fff;
-			padding:10px;
-			margin-left:190px;
-			text-align:center;
-			box-shadow:0px 0px 10px #999;
-			top:150px;
-		}
-		.tableContainer table{
-			width:100%;
-		}
-		.btn{
-			right:20px;
-			top:30px;
-			background-color:#7cb342;
-			color:#fff;
-			position:absolute;
-			padding:15px;
-			cursor:pointer;
-		}
-		.header_under{
-			height:40px;
-		}
-
-
-	
-	.container_useraccount
-		.alluser_info
-			.account_bgcontainer
-				.option_spancont
-					span
-					span
-					span
-						
-				.img_namecont
-					img.user_img(src="/image/Notion.png")
-
-					.name_user #{datos.nombre} #{datos.apellido}
-						
-					
-			.user_info
-				.tableContainer
-					table
-						tr
-							td 
-								b Materia
-							td 
-								b Inscripcion
-							td
-								b Promedio
-						tr
-						-each m in datos.materias
-							td m.nombre
-							td m.inicio
-							td m.calif
+  link(rel='stylesheet', href='/stylesheets/app.css')
+  style.
+    .account_bgcontainer{
+      background-image: url("/image/fondochido.jpg");
+    }
+    .user_img{
+      background-image: url("/image/user_img.png");
+    }
+  div.container_useraccount
+    div.alluser_info
+      div.account_bgcontainer
+        div.option_spancontout
+          span.option_spancont
+            span
+            span
+            span
+        div.img_namecontout
+          div.img_namecont
+            div.user_img
+            div.name_user Usuario
+      div.user_info
+        div.porfile_options
+          div.porfile_items Perfil
+          div.porfile_items Materias
+          div.porfile_items Configuración
+        div.user_personalinfo
+          span Escuela:
+          p Institución Escolar
+        div.cont_usersubjects
+          div.user_subjects
+            div.subimg_cont
+              span#circle
+            div.subdats_cont
+              div.subject_title
+                span Matematicas
+              div.subject_info
+                span.subject_infoinner
+                  b Promedio:
+                  span 9.6
+                span.subject_infoinner
+                  b Fecha de Inicio:
+                  span 24/09/2014
+          div.user_subjects
+            div.subimg_cont
+              span#circle
+            div.subdats_cont
+              div.subject_title
+                span Filosofia
+              div.subject_info
+                span.subject_infoinner
+                  b Promedio:
+                  span 8.4
+                span.subject_infoinner
+                  b Fecha de Inicio:
+                  span 02/10/2014

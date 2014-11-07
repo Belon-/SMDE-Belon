@@ -2,9 +2,6 @@ extends layout
 
 block content
 	style.
-		.header{
-			height:100px;
-		}
 		.container{
 			z-index:97;
 			width:675px;
@@ -16,7 +13,7 @@ block content
 			padding:0px;
 			padding-bottom: 18px;
 			text-align:center;
-			box-shadow:0px 0px 10px #999;
+			box-shadow:0px 3px 12px #616161;
 		}
 		.container h1{
 			font-family:"Roboto" , sans-serif;
@@ -28,53 +25,51 @@ block content
 			padding-top:32px;
 			border-bottom: 3px solid #9e9e9e;
 		}
-		.header_under{
-			height:40px;
-		}
 
-	.container
-		h1 Registrarme
-		br
-		br
-		form(method='post', action='crea')
-			table(align="right" style="margin-right: 15px;")
-				tr
-					td
-						div.group
-							input(type="text", name="mail", required)
-							span.highlight
-							span.bar
-							label Email
-					td
-						div.group
-							input(type="text", name="escuela", required)
-							span.highlight
-							span.bar
-							label Escuela
-				tr
-					td
-						div.group
-							input(type="text", name="nombre", required)
-							span.highlight
-							span.bar
-							label Nombre
-					td(align="right")
-						div.group
-							input(type="text", name="apellido", required)
-							span.highlight
-							span.bar
-							label Apellido
-				tr
-					td
-						div.group
-							input(type="password", name="contra", required)
-							span.highlight
-							span.bar
-							label Contraseña
-				tr
-					td(colspan="2" align="center")
-						input(type="submit", value="Registrarme")
-						span &nbsp;
-						input(type="button", onclick="window.location='/login'", value="Iniciar Sesión")
+	.each_containerblock
+		.container
+			h1 Registrarme
 			br
+			br
+			form(method='post', action='crea')
+				table(align="right" style="margin-right: 15px;")
+					tr
+						td
+							div.group
+								input(type="text", name="mail", required)
+								span.highlight
+								span.bar
+								label Email
+						td
+							div.group
+								input(type="text", name="escuela", required)
+								span.highlight
+								span.bar
+								label Escuela
+					tr
+						td
+							div.group
+								input(type="text", name="nombre", required)
+								span.highlight
+								span.bar
+								label Nombre
+						td(align="right")
+							div.group
+								input(type="text", name="apellido", required)
+								span.highlight
+								span.bar
+								label Apellido
+					tr
+						td
+							div.group
+								input(type="password", name="contra", required)
+								span.highlight
+								span.bar
+								label Contraseña
+					tr
+						td(colspan="2" align="center")
+							input(type="submit", value="Registrarme")
+							span &nbsp;
+							input(type="button", onclick="window.location='/login'", value="Iniciar Sesión")
+				br
 			
