@@ -7,33 +7,25 @@ html
   script(src='/javascripts/jquery-2.1.1.js')
   style.
     @import url(http://fonts.googleapis.com/css?family=Lobster);
-    .profile_imgmenu{
-      position: absolute;
-      top: 45px;
-      z-index: 1;
-    }
-    .porfile_namemenu{
-      top: 132px;
-      padding-left: 100px;
-    }
   body
     .screen(onclick="hidemenu()")
       .menu
         .menu_container
           if datos == undefined
+            .proyect_titlemenu SMDE
             a(href="/")
-                .option_menu Inicio
+              .option_menu Inicio
             a(href="/login") 
               .option_menu Iniciar Sesión
             a(href="/signup")
               .option_menu Registrarme 
           else
             .background_menuporfile
-              .close_menu
-                span
               .profile_imgmenu
-                img(src="/image/Notion.png" width="100px" heigth="100px").profile_imgmenu
-              a(href="/u").porfile_namemenu #{datos.nombre} #{datos.apellido}
+                img(src="/image/Notion.png").profile_imgmenu
+              a(href="/u")
+                .profile_namemenu #{datos.nombre} #{datos.apellido}
+            .proyect_titlemenu SMDE
             a(href="/")
               .option_menu Inicio
             a(href="/u")
@@ -51,7 +43,7 @@ html
         span
         span
         span
-    .header_under
+      .proyect_name SMDE
   
     block content
 

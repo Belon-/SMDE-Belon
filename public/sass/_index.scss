@@ -28,7 +28,7 @@ $squareColor: #00897b;
 	padding-top: 10rem;
 	h1{
 		font-size: 10rem;
-		font-family: "Roboto";
+		font-family: "Roboto", sans-serif;
 		word-spacing: 0px;
 		color:#fff;
 		line-height: 0px;
@@ -36,13 +36,14 @@ $squareColor: #00897b;
 	h3{
 		font-size: 1.5rem;
 		font-weight: 100;
-		font-family: "Roboto";
+		font-family: "Roboto", sans-serif;
 		color:#fff;
 		line-height: 0px;
 	}
 	p{
 		color:#fff;
 		padding-left: 280px;
+		font-family: "Roboto", sans-serif;
 	}
 }
 .section2{
@@ -73,7 +74,8 @@ $squareColor: #00897b;
 	h1,h2{
 		font-size: 3rem;
 		text-align: left;
-		font-family: "lobster";
+		font-family: "Roboto";
+		font-weight: 300;
 	}
 	h2{
 		font-size: 2rem;
