@@ -7,13 +7,13 @@ function iframe_on(){
 	richTextField.document.designMode = 'On';
 }
 function bold(){
-	richTextField.document.execCommand('bold',false,null); 
+	richTextField.document.execCommand('bold',false,null);
 }
 function underline(){
 	richTextField.document.execCommand('underline',false,null);
 }
 function italic(){
-	richTextField.document.execCommand('italic',false,null); 
+	richTextField.document.execCommand('italic',false,null);
 }
 function set_size(a){
 	richTextField.document.execCommand('FontSize',false,a);
@@ -48,7 +48,7 @@ function ordered_list(){
 	richTextField.document.execCommand("InsertOrderedList", false,"newUL");
 }
 function link(){
-	var linkURL = prompt("Enter the URL for this link:", "http://"); 
+	var linkURL = prompt("Enter the URL for this link:", "http://");
 	richTextField.document.execCommand("CreateLink", false, linkURL);
 }
 function unlink(){
@@ -62,10 +62,10 @@ function redo(){
 }
 function image(){
 	var imgSrc = prompt('Enter image location', '');
-	var Code= Math.floor((Math.random() * 100) + 65); 
+	var Code= Math.floor((Math.random() * 100) + 65);
 	Code=Code+String.fromCharCode( Math.floor((Math.random() * 88) + 66) );
-	Code=Code+ Math.floor((Math.random() * 10) + 1); 
-	var done="<img src='%s' id='UIimage%c' class='img' onclick='UIImg(\"%p\")'>";
+	Code=Code+ Math.floor((Math.random() * 10) + 1);
+	var done="<img src='%s' id='UIimage%c' class='img' ondblclick='UIImg(\"%p\")'>";
 	done=done.replace("%s", imgSrc);
 	done=done.replace("%c", Code);
 	done=done.replace("%p", Code);
@@ -139,9 +139,9 @@ function Safe_HTML(){
 function create_table(){
 		var row=prompt("Row number");
 		var col=prompt("Col number");
-		var Code= Math.floor((Math.random() * 100) + 65); 
+		var Code= Math.floor((Math.random() * 100) + 65);
 		Code=Code+String.fromCharCode( Math.floor((Math.random() * 88) + 66) );
-		Code=Code+ Math.floor((Math.random() * 10) + 1); 
+		Code=Code+ Math.floor((Math.random() * 10) + 1);
 		var output='<span class="table-options-main" id="UITableContainer'+Code+'" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
 
 		for(var i=0; i<col; i++){
@@ -157,9 +157,9 @@ function create_table(){
 function create_table_with_header(){
 	var row=prompt("Row number");
 		var col=prompt("Col number");
-		var Code= Math.floor((Math.random() * 100) + 65); 
+		var Code= Math.floor((Math.random() * 100) + 65);
 		Code=Code+String.fromCharCode( Math.floor((Math.random() * 88) + 66) );
-		Code=Code+ Math.floor((Math.random() * 10) + 1); 
+		Code=Code+ Math.floor((Math.random() * 10) + 1);
 		var output='<span class="table-options-main" id="UITableContainer'+Code+'" style="width:auto"><table cellspacing="0" id="UITable'+Code+'" width="auto">';
 
 		for(var i=0; i<col; i++){
@@ -240,6 +240,7 @@ function changeB() {
 }
 
 function UIImg(x){
+
 	var w=prompt('w','w');
 	w+='px';
 	var h=prompt('h','h');

@@ -9,6 +9,10 @@ block content
     .user_img{
       background-image: url("/image/user_img.png");
     }
+    a{
+      text-decoration:none;
+      color:#000;
+    }
   div.container_useraccount
     div.alluser_info
       div.account_bgcontainer
@@ -20,39 +24,28 @@ block content
         div.img_namecontout
           div.img_namecont
             div.user_img
-            div.name_user Usuario
+            div.name_user #{datos.nombre} #{datos.apellido}
       div.user_info
         div.porfile_options
           div.porfile_items Perfil
           div.porfile_items Materias
-          div.porfile_items Configuración
+          div.porfile_items
+            a(href="/edit") Configuración
         div.user_personalinfo
           span Escuela:
-          p Institución Escolar
-        div.cont_usersubjects
-          div.user_subjects
-            div.subimg_cont
-              span#circle
-            div.subdats_cont
-              div.subject_title
-                span Matematicas
-              div.subject_info
-                span.subject_infoinner
-                  b Promedio:
-                  span 9.6
-                span.subject_infoinner
-                  b Fecha de Inicio:
-                  span 24/09/2014
-          div.user_subjects
-            div.subimg_cont
-              span#circle
-            div.subdats_cont
-              div.subject_title
-                span Filosofia
-              div.subject_info
-                span.subject_infoinner
-                  b Promedio:
-                  span 8.4
-                span.subject_infoinner
-                  b Fecha de Inicio:
-                  span 02/10/2014
+          p #{datos.escuela}
+        -each m in datos.materias
+          div.cont_usersubjects
+            div.user_subjects
+              div.subimg_cont
+                span#circle
+              div.subdats_cont
+                div.subject_title
+                  span #{m.materia}
+                div.subject_info
+                  span.subject_infoinner
+                    b Promedio:
+                    span #{m.calif}
+                  span.subject_infoinner
+                    b Fecha de Inicio:
+                    span #{m.inicio}

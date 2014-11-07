@@ -76,13 +76,12 @@ exports.add = function(req, res){
 		if(error){//por si la cagan
 			res.send('Error al registrar al pregunta '+ error);
 		}else{
-			
 			res.redirect('/');//redirecciona al index
 		}
 	});
 };
-exports.addTheory=function(req,res){
-	res.render('editor/editor',{ title: 'add',
+exports.addTheory = function(req,res){
+	res.render('editor/editor',{ title: 'Añadir Teoria',
 						datos: 	req.session.datos});
 }
 exports.base=function(req,res){

@@ -43,7 +43,7 @@ if ('development' == app.get('env')) {
 //conect to DB
 mongoose.connect('mongodb://localhost/smde', function(error){
 	if(error){
-		throw error;		
+		throw error;
 	}else{
 		console.log('Estas super connectado con mongo bato crazy loco!');
 	}

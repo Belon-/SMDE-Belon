@@ -1,4 +1,8 @@
-<<<<<<< HEAD
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(../sass/textField.css);
+@import url(../sass/profile.css);
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500);
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
@@ -6,101 +10,98 @@
 @import url(../sass/profile.css);
 .header {
   width: 100%;
+  height: 150px;
   padding: 18px 0px 18px 0px;
-  height: 90px;
   position: fixed;
-  z-index: 19;
-  background-color: #7cb342;
-  border-bottom: 25px solid #628e34;
+  background-color: #689F38;
+  border-bottom: 25px solid #4f792b;
   box-shadow: 0px 2px 12px #757575; }
 
-.header_under {
-  width: 100%;
-  height: 75px; }
-
 .botton_menu {
-  width: 20px;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   position: relative;
-  left: 18px;
+  float: left;
+  margin: 0;
+  left: 19px;
+  display: block;
+  top: 11px;
   cursor: pointer; }
   .botton_menu span {
     display: block;
-    width: 22px;
-    margin: 3px auto;
-    height: 3px;
-    border-radius: 2px;
-    background-color: #fff; }
+    width: 18px;
+    height: 2px;
+    margin: 0px auto;
+    background-color: #f2f2f2;
+    margin-bottom: 3px;
+    border-radius: 2px; }
+
+.proyect_name {
+  font-family: "Roboto" , sans-serif;
+  font-size: 32px;
+  width: 100%;
+  font-weight: 200;
+  color: #fff;
+  position: absolute;
+  margin: 0px auto;
+  float: left;
+  top: 15px;
+  text-align: center;
+  z-index: -1; }
 
 .menu {
-  width: 320px;
+  width: 330px;
   height: 100%;
   padding: 0;
   background-color: rgba(230, 230, 230, 0.9);
   color: #f2f2f2;
+  min-height: 400px;
+  overflow: auto;
   position: fixed;
   z-index: 199;
   box-shadow: 3px 0px 15px #2e2e2e; }
   .menu a {
-    text-decoration: none; }
+    text-decoration: none;
+    padding: 0px;
+    width: 100%; }
   .menu span.bottom {
     color: #2e2e2e;
+    font-family: sans-serif;
+    font-size: 14px;
     position: absolute;
     text-align: center;
     bottom: 10px;
-    left: 50px;
+    width: 100%;
     font-weight: 100; }
   .menu img.profile_imgmenu {
     border-radius: 100%; }
 
 .background_menuporfile {
   width: 100%;
-  height: 192px;
+  padding: 0;
   background-size: 100% 100%;
   background-image: url("/image/fondochido.jpg"); }
 
-.close_menu {
-  font-size: 22px;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
+.profile_imgmenu {
   width: 100%;
-  height: 22px;
-  padding: 10px 0px 6px 0px;
-  font-weight: 200;
-  text-align: right; }
-
-.close_menu span {
-  display: block;
-  position: relative;
-  left: 281px;
-  width: 22px;
-  cursor: pointer;
-  margin: 0px; }
-
-.close_menu span:hover {
-  color: #E53935;
-  font-weight: 400; }
-
-.porfile_imgmenu {
-  width: 100%;
-  height: 58px;
-  padding: 8px 0px 27px 0px; }
-  .porfile_imgmenu img {
+  height: 130px; }
+  .profile_imgmenu img {
     width: 58px;
     height: 58px;
-    margin-left: 25px;
+    margin-left: 22px;
     border-radius: 100px;
-    box-shadow: 0px 2px 8px #2c2c2c; }
+    box-shadow: 0px 2px 8px #2c2c2c;
+    position: relative;
+    top: 97px; }
 
-.porfile_namemenu {
-  width: 100%;
+.profile_namemenu {
+  width: auto;
   padding: 18px;
-  padding-left: 22px;
+  padding-left: 92px;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #fff;
-  position: absolute;
   background-color: rgba(0, 0, 0, 0.5); }
 
 .proyect_titlemenu {
@@ -122,7 +123,7 @@
   color: #1c1c1c;
   font-family: "Roboto" , sans-serif;
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   padding: 16px 16px 16px 32px;
   width: auto;
   cursor: pointer;
@@ -131,7 +132,7 @@
   -webkit-transition: all 0.5s; }
   .option_menu:hover {
     border-left: 5px solid #1c1c1c;
-    background-color: #bdbdbd;
+    background-color: #a4a4a4;
     color: #fff; }
 
 .square_container {
@@ -165,19 +166,20 @@
   padding-top: 10rem; }
   .section1 h1 {
     font-size: 10rem;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     word-spacing: 0px;
     color: #fff;
     line-height: 0px; }
   .section1 h3 {
     font-size: 1.5rem;
     font-weight: 100;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     color: #fff;
     line-height: 0px; }
   .section1 p {
     color: #fff;
-    padding-left: 280px; }
+    padding-left: 280px;
+    font-family: "Roboto", sans-serif; }
 
 .section2 {
   -webkit-box-sizing: border-box;
@@ -207,7 +209,8 @@
   .section2 h1, .section2 h2 {
     font-size: 3rem;
     text-align: left;
-    font-family: "lobster"; }
+    font-family: "Roboto";
+    font-weight: 300; }
   .section2 h2 {
     font-size: 2rem; }
   .section2 div {
@@ -433,6 +436,7 @@ ul {
   position: relative;
   min-width: 100%;
   height: auto;
+  padding-top: 60px;
   padding: calc(100px + 2rem) 1rem 2rem 1rem; }
 
 *, body {
@@ -458,13 +462,6 @@ body {
   top: 0px;
   display: none; }
 
-/*# sourceMappingURL=app.css.map */
-=======
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500);
-@import url(http://fonts.googleapis.com/css?family=Poiret+One);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
-@import url(../sass/textField.css);
-@import url(../sass/profile.css);
 .header {
   width: 100%;
   height: 150px;
@@ -724,4 +721,3 @@ body {
   margin: 0px auto; }
 
 /*# sourceMappingURL=app.css.map */
->>>>>>> FETCH_HEAD
