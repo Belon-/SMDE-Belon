@@ -36,7 +36,7 @@ block content
 	
 	.content
 		h1 Añadir pregunta
-		form(action="/question/add" method="post")
+		form(action="/quest/add", method="post")
 			.container
 				table(align="center")
 					tr
@@ -48,7 +48,7 @@ block content
 								label Pregunta
 					tr
 						td
-							input(type="radio",name="answ")
+							input(type="radio",name="answ", value='1')
 						td
 							div.group
 								input(type='text', name='aq', required)
@@ -58,7 +58,7 @@ block content
 								
 					tr
 						td
-							input(type="radio",name="answ")
+							input(type="radio",name="answ", value='2')
 						td
 							div.group
 								input(type='text', name='bq', required)
@@ -67,7 +67,7 @@ block content
 								label Respuesta B
 					tr
 						td
-							input(type="radio",name="answ")
+							input(type="radio",name="answ", value='3')
 						td
 							div.group
 								input(type='text', name='cq', required)
@@ -76,7 +76,7 @@ block content
 								label Respuesta C
 					tr
 						td
-							input(type="radio",name="answ")
+							input(type="radio",name="answ", value='4')
 						td
 							div.group
 								input(type='text', name='dq', required)
@@ -84,7 +84,7 @@ block content
 								span.bar
 								label Respuesta d
 				
-				select
+				select(name='materia')
 					-each t  in topics
 						option #{t.nombre}
 

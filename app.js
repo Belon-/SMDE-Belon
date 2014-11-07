@@ -66,6 +66,7 @@ app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
 app.post('/cambia', routes.cambia);
 app.post('/inscribe', routes.inscribe);
+app.post('/quest/add', stdnts.add);
 
 //esto se va a quitar posteriormente
 app.get('/materialoca',routes.iniciamateria);
