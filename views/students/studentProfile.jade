@@ -7,7 +7,7 @@ block content
       background-image: url("/image/fondochido.jpg");
     }
     .user_img{
-      background-image: url("/image/user_img.png");
+      background-image: url("/image/Notion.png");
     }
     a{
       text-decoration:none;
@@ -44,8 +44,7 @@ block content
           -if(datos.materias == undefined || datos.materias == "")
             div.cont_usersubjects
               div.user_subjects
-                div.subimg_cont
-                  h3(style="color:#fff") No hay materias registradas
+                h3 No hay materias registradas
           -else
             -each m in datos.materias
               div.cont_usersubjects

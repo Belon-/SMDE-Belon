@@ -50,19 +50,19 @@
   z-index: -1; }
 
 .menu {
-  width: 330px;
+  width: 320px;
   height: 100%;
   left: -330px;
   top: 0px;
   padding: 0;
   background-color: rgba(230, 230, 230, 0.9);
+  box-shadow: 2px 0px 15px #2e2e2e;
   color: #f2f2f2;
   min-height: 400px;
   overflow: auto;
   position: fixed;
   display: block;
   z-index: 199;
-  box-shadow: 3px 0px 15px #2e2e2e;
   transition: all 0.5s;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s; }
@@ -509,19 +509,19 @@ body {
   z-index: -1; }
 
 .menu {
-  width: 330px;
+  width: 320px;
   height: 100%;
   left: -330px;
   top: 0px;
   padding: 0;
   background-color: rgba(230, 230, 230, 0.9);
+  box-shadow: 2px 0px 15px #2e2e2e;
   color: #f2f2f2;
   min-height: 400px;
   overflow: auto;
   position: fixed;
   display: block;
   z-index: 199;
-  box-shadow: 3px 0px 15px #2e2e2e;
   transition: all 0.5s;
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s; }
@@ -727,8 +727,9 @@ body {
   display: none; }
 
 .each_containerblock {
-  padding: 50px;
+  padding: 0px;
   padding-top: 80px;
+  padding-bottom: 50px;
   margin: 0px auto; }
 
 /*# sourceMappingURL=app.css.map */

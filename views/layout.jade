@@ -37,7 +37,7 @@ html
           a(href="/logout")
             .option_menu Salir
         span.bottom Crafted By
-          b Belon
+          b  Belon
     .header
       .botton_menu(onclick="showmenu()")
         span
@@ -51,9 +51,10 @@ html
   script.
       function showmenu(){
           $(".menu").animate({left:'0px'});
-          $(".menu").css('box-shadow' ,'2px 0px 15px #1c1c1c');
+          $(".menu").css('box-shadow' ,'2px 0px 15px #2e2e2e');
           $(".screen").show();
       }
+      
       function hidemenu(){
           $(".menu").animate({left:'-330px'});
           $(".menu").css('box-shadow' ,'none');
