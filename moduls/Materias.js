@@ -11,7 +11,6 @@ var Materias = mongoose.Schema({
 	creada: { type: Date, default: Date.now },
 	cuestionarios: 	[Cuestionarios],
 	informacion: 	[Teoria]
-
 });
 
 module.exports = mongoose.model('materia', Materias);

@@ -17,6 +17,7 @@ exports.constructor = function(alumnom, adminm, profesorm, escuelam, materiasm, 
 };
 
 exports.index = function(req, res){
+	console.log(req.session.datos);
 	res.render('index', { title: 'Inicio',
 						datos: 	req.session.datos});
 };
@@ -60,7 +61,7 @@ exports.cues = function(req, res){
 
 
 exports.crea = function(req, res){
-	
+
 	var datos = new alumno({//jalan los datos del jade y los guardan
 		_id: req.body.mail,
 		nombre: req.body.nombre,
@@ -96,37 +97,38 @@ exports.inicia = function(req, res){
 									res.send('Error al intentar ver el personaje.');
 								}else{
 									if(documento3 == null){
-										res.send('La cagastes!!');
+										res.redirect('/login');
 									}else{
 										if(documento3.password == req.body.contra){
-											req.session.datos = documento3;
-											res.redirect('/');
+											req.session.datos=setUserType(3,documento3);
+											res.redirect('/u');
 										}else{
-											res.send('La cagastes!!');
+											res.redirect('/login');
 										}
 									}
 								}
 							});
 						}else{
 							if(documento2.password == req.body.contra){
-								req.session.datos = documento2;
-								res.redirect('/');
+								req.session.datos=setUserType(2,documento2);
+								res.redirect('/u');
 							}else{
-								res.send('La cagastes!!');
+								res.redirect('/login');
 							}
 						}
 					}
 				});
 			}else{
 				if(documento.password == req.body.contra){
-					req.session.datos = documento;
-					res.redirect('/');
+					req.session.datos=setUserType(1,documento);
+					res.redirect('/u');
 				}else{
-					res.send('La cagastes!!');
+					res.redirect('/login');
 				}
 			}
 		}
 	});
+
 }
 
 exports.cambia = function(req, res){
@@ -154,7 +156,6 @@ exports.cambia = function(req, res){
 	}else{
 		res.send('La cagastes!!');
 	}
-
 }
 
 //esto se va a quitar posteriormente
@@ -175,10 +176,11 @@ exports.iniciamateria = function(req, res){
 exports.inscribe = function(req, res){
 
 	var aux = req.session.datos;
-	
+
 	alumno.update({_id: aux._id},{
 		$set:{
 				materias: {
+					id_materia:req.body.iden,
 					materia: req.body.materia,
 					calif: 0
 				}
@@ -194,4 +196,11 @@ exports.inscribe = function(req, res){
 			});
 		});
 
+}
+
+var setUserType=function(userType,json){
+	var us=JSON.stringify(json);
+	us=us.substring(0, us.length-1);
+	us+=",uType:"+userType+"}";
+	return eval("("+us+")");
 }

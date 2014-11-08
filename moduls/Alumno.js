@@ -12,6 +12,7 @@ var Alumno = mongoose.Schema({
 	escuela: {type: String, required: true},
 	materias: 	[//hay que revisar esta parte, algo no esta bien :/
 		{
+			id_materia:{type: String, required: true},
 			materia:{type: String, required: true},
 			calif:	{type: Number, required: true},
 			inicio: {type: Date, default: Date.now}

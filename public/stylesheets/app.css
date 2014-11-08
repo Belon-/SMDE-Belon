@@ -200,6 +200,11 @@
   position: absolute;
   text-align: center;
   top: 100%; }
+  @media screen and (max-width: 800px) {
+    .section2 .s2 {
+      height: 50%;
+      width: 100%;
+      display: block; } }
   .section2 .s2 {
     height: 50%; }
   .section2 .bg2 {
@@ -659,6 +664,11 @@ body {
   position: absolute;
   text-align: center;
   top: 100%; }
+  @media screen and (max-width: 800px) {
+    .section2 .s2 {
+      height: 50%;
+      width: 100%;
+      display: block; } }
   .section2 .s2 {
     height: 50%; }
   .section2 .bg2 {

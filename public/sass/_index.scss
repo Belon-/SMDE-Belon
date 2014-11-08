@@ -50,6 +50,13 @@ $squareColor: #00897b;
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box; /* Firefox, other Gecko */
 	box-sizing: border-box; /* Opera/IE 8+ */
+	@media screen and (max-width: 800px) {
+		.s2{
+			height: 50%;
+			width:100%;
+			display:block;
+		}
+	}
 	.s2{
 		height: 50%;
 	}

@@ -25,7 +25,7 @@ html
               img(src="/image/Notion.png").profile_imgmenu
             a(href="/u")
               .profile_namemenu #{datos.nombre} #{datos.apellido}
-          .proyect_titlemenu SMDE
+          .proyect_titlemenu SMDE #{datos.uType}
           a(href="/")
             .option_menu Inicio
           a(href="/u")
@@ -54,7 +54,7 @@ html
           $(".menu").css('box-shadow' ,'2px 0px 15px #2e2e2e');
           $(".screen").show();
       }
-      
+
       function hidemenu(){
           $(".menu").animate({left:'-330px'});
           $(".menu").css('box-shadow' ,'none');
