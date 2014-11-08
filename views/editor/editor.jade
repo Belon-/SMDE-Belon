@@ -38,7 +38,7 @@ block content
   .topbar
     .informationbar
       .topbar-wrapper
-        span.notebook [Title]
+        span.notebook(onclick="submit_form()") [Guardar]
         span#toolbar-btn
           span
           span
@@ -100,7 +100,7 @@ block content
   .page-container
     .page-wrapper
       iframe(src="/theory/base" name="richTextField" id="richTextField" class="page" style="display:block" frameborder="0")
-      form#submit_form(style="opacity:0")
+      form#submit_form(style="opacity:0" method="post")
         textarea(name="textArea")
         input(type="text" name="jason" id="jason")
 

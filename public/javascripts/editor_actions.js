@@ -77,7 +77,6 @@ function image(){
 function submit_form(charac){
 	var theForm = document.getElementById("submit_form");
 	theForm.elements["textArea"].value = window.frames['richTextField'].document.body.innerHTML;
-	$('#jason').val(JSON.stringify(characteristics));
 	theForm.submit();
 }
 
