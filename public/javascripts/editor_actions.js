@@ -77,7 +77,6 @@ function image(){
 function submit_form(charac){
 	var theForm = document.getElementById("submit_form");
 	theForm.elements["textArea"].value = window.frames['richTextField'].document.body.innerHTML;
-	$('#jason').val(JSON.stringify(characteristics));
 	theForm.submit();
 }
 
@@ -134,6 +133,8 @@ function Safe_HTML(){
 
 	pre=pre.replace(/</g,"&lt;");
 	pre=pre.replace(/>/g,"&gt;");
+	pre=pre.replace(/"/g,"&#34;");
+	pre=pre.replace(/'/g,"&#39;");
 	return pre;
 }
 function create_table(){
