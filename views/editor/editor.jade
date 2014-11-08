@@ -34,6 +34,16 @@ block content
       position:fixed;
       bottom:-100px;
     }
+    #tema{
+      position: absolute;
+      top:120px;
+      background-color:#fff;
+      left:230px;
+      z-index:60;
+      height:30px;
+      width:8.5in;
+      text-align:center;
+    }
 
   .topbar
     .informationbar
@@ -100,9 +110,10 @@ block content
   .page-container
     .page-wrapper
       iframe(src="/theory/base" name="richTextField" id="richTextField" class="page" style="display:block" frameborder="0")
-      form#submit_form(style="opacity:0" method="post")
-        textarea(name="textArea")
-        input(type="text" name="jason" id="jason")
+      form#submit_form(method="post")
+        textarea.hidden(name="textArea")
+        input(type="text" name="tema" id="tema" placeholder="Tema")
+        input.hidden(type="text" name="jason" id="jason")
 
   .hidden
     input(type="color" id="iForeColor" onchange="changeF()")
