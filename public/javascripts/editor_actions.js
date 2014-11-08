@@ -134,6 +134,8 @@ function Safe_HTML(){
 
 	pre=pre.replace(/</g,"&lt;");
 	pre=pre.replace(/>/g,"&gt;");
+	pre=pre.replace(/"/g,"&#34;");
+	pre=pre.replace(/'/g,"&#39;");
 	return pre;
 }
 function create_table(){
