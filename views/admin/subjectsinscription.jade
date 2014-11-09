@@ -1,3 +1,35 @@
 extends ../layout
 
 block content
+	
+	.each_containerblock
+	    .profesor_subjectscontainer
+	        .tile_profsubject
+	          img(src='/image/user_img.png')
+	          span Fulano de Tal
+	            span
+	        .profesor_suboptioncont
+	          span.ins_headprof Asignar materias
+	          .profesor_suboptioncontinner
+	            .subprofesor_item
+	              span
+	              label Física
+	            .subprofesor_item
+	              span
+	              label Matemáticas
+	            .subprofesor_item
+	              span
+	              label Lengua
+	          span.ins_headprof Materias asignadas
+	          form
+	            .subprofesor_item
+	              span
+	              label Física
+	            .subprofesor_item
+	              span
+	              label Matemáticas
+	            .subprofesor_item
+	              span
+	              label Lengua
+	            .profsubmit_cont
+	              input(type='submit', value='Asignar')
