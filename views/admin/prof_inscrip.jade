@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+
+  .each_containerblock
+    .profesor_inscripcontainer
+      .tile_profinscrip Inscribir profesores
+      .profinscripcontinner
+        .ins_headprofinscrip Inscribir nuevo profesor
+        form.inscrip_profdatscont
+          .inscrip_profdat
+            label Clave
+            input(type='text', name='prof_inscripid', placeholder='Clave')
+            label Nombre
+            input(type='text', name='prof_inscripname', placeholder='Nombre')
+          .inscrip_profdat
+            label Apellido Paterno
+            input(type='text', name='prof_inscripapp', placeholder='Apellido Paterno')
+            label Apellido Materno
+            input(type='text', name='prof_inscripapm', placeholder='Apellido Materno')
+          .inscrip_profdat
+            label Correo
+            input(type='text', name='prof_mailinscrip', placeholder='Correo')
+            label Contraseña
+            input(type='password', name='prof_passinscripp', placeholder='Contraseña')
+          .inscrip_profdat
+            label Confirmar contraseña
+            input(type='password', name='pass_confirmpassinscrip', placeholder='Confirmar contraseña')
+          .incripprof_submitcont
+            input(type='submit', value='Inscribir')
+        .ins_headprofinscrip Profesores inscritos
+        .prof_inscriplistdisplay
+          .prof_displayinscrip
+            b Clave
+            br
+            label Nombre Apellido
+            span.desinscrip_profcross X
+          .prof_displayinscrip
+            b Clave
+            br
+            label Nombre Apellido
+            span.desinscrip_profcross X
+          .prof_displayinscrip
+            b Clave
+            br
+            label Nombre Apellido
+            span.desinscrip_profcross X
+

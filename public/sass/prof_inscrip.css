@@ -1,0 +1,137 @@
+.profesor_inscripcontainer{
+	width: 680px;
+	margin: 0px auto;
+	padding: 0px;
+	background-color: #eeeeee;
+	box-shadow: 0px 3px 18px #1c1c1c;
+	border-radius: 2px;
+	overflow: hidden;
+}
+
+.tile_profinscrip{
+	width: auto;
+	padding: 16px;
+	padding-left: 55px;
+	padding-top: 55px;
+	font-size: 30px;
+	color: #f2f2f2;
+	font-weight: 400;
+	font-family: "Roboto" , sans-serif;
+	background-color: #C0CA33;
+	margin-bottom: 16px;
+}
+
+.profinscripcontinner{
+	width: 100%;
+	padding: 0px;
+	color: #2e2e2e;
+}
+
+.ins_headprofinscrip{
+	width: auto;
+	padding: 20px;
+	padding-left: 40px;
+	margin-left: 9%;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	display: block;
+}
+
+.inscrip_profdatscont{
+	width: 90%;
+	margin-left: 8%;
+	padding: 0px;
+	border-bottom: 1px solid #e0e0e0;
+	margin-bottom: 12px;
+}
+
+.inscrip_profdat{
+	width: 92%;
+	margin-left: 8%;
+	padding: 10px 0px 10px 0px;
+}
+
+.inscrip_profdat label{
+	font-size: 12px;
+	display: none;
+}
+
+.inscrip_profdat input[type=text] , .inscrip_profdat input[type=password]{
+	border: none;
+	width: 225px;
+	padding: 8px;
+	border-bottom: 1px solid #bdbdbd;
+	font-size: 16px; 
+	font-family: sans-serif;
+	color: #2e2e2e;
+	outline: none;
+	background-color: rgba(0,0,0,0);
+	margin-left: 22px;
+	margin-bottom: 10px;
+	margin-top: 5px;
+}
+
+.incripprof_submitcont{
+	width: auto;
+	padding: 16px;
+	padding-top: 8px;
+}
+
+.incripprof_submitcont input[type=submit]{
+	width: 150px;
+  	color:#fff;
+  	background-color: #29b6f6;
+  	border: none;
+  	box-shadow: 0px 2px 7px #757575;
+  	font-family: "Roboto" , sans-serif;
+  	padding: 16px;
+  	position: relative;
+  	left: 72%;
+  	margin-left: 10px;
+  	text-transform: uppercase;
+  	cursor: pointer;
+  	font-weight: bold;
+  	font-size: 14px; 
+}
+
+.prof_inscriplistdisplay{
+	padding: 0px;
+	width: 90%;
+	margin-left: 8%;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.prof_displayinscrip{
+	width: auto;
+	margin-bottom: 10px;
+	margin-left: 10%;
+	padding: 12px;
+	font-size: 15px;
+}
+
+.prof_displayinscrip label{
+	margin-left: 20px;
+	font-size: 14px;
+}
+
+.desinscrip_profcross{
+	display: inline-block;
+	float: right;
+	position: relative;
+	cursor: pointer;
+	left: 35px;
+	top: -20px;
+	height: 27px;
+	width: 27px;
+	margin-right: 30px;
+	font-family: "Roboto" , sans-serif;
+	font-size: 28px;
+	font-weight: 200;
+}
+
+.desinscrip_profcross:hover{
+	font-weight: 300;
+	color: #F44336;
+}
