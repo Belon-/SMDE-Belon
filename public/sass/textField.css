@@ -3,7 +3,7 @@
   margin-bottom:45px;
   font-family: "Roboto" , sans-serif; 
 }
-input[type=text],input[type=password],input[type=email]{
+.group input[type=text], .group input[type=password], .group input[type=email]{
   font-size:16px;
   padding:10px 10px 10px 5px;
   display:block;
@@ -41,10 +41,10 @@ input[type=button]{
   font-weight: bold;
   font-size: 14px;
 }
-input:focus 		{ outline:none; }
+.group input:focus 		{ outline:none; }
 
 /* LABEL ======================================= */
-label 				 {
+.group label 				 {
   color:#999; 
   font-size:16px;
   font-weight:normal;
@@ -58,15 +58,15 @@ label 				 {
 }
 
 /* active state */
-input:focus ~ label, input:valid ~ label 		{
+.group input:focus ~ label, input:valid ~ label 		{
   top:-20px;
   font-size:14px;
   color:#1E88E5;
 }
 
 /* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:300px; }
-.bar:before, .bar:after 	{
+.group .bar 	{ position:relative; display:block; width:300px; }
+.group .bar:before, .group .bar:after 	{
   content:'';
   height:2px; 
   width:0;
@@ -77,15 +77,15 @@ input:focus ~ label, input:valid ~ label 		{
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
 }
-.bar:before {
+.group .bar:before {
   left:50%;
 }
-.bar:after {
+.group .bar:after {
   right:50%; 
 }
 
 /* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
+.group input:focus ~ .group .bar:before, .group input:focus ~ .group .bar:after {
   width:50%;
 }
 
@@ -101,7 +101,7 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
 }
 
 /* active state */
-input:focus ~ .highlight {
+.group input:focus ~ .highlight {
   -webkit-animation:inputHighlighter 0.3s ease;
   -moz-animation:inputHighlighter 0.3s ease;
   animation:inputHighlighter 0.3s ease;
