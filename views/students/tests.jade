@@ -1,6 +1,29 @@
 extends ../layout
 
 block content
+	script.
+		function millisToMinutesAndSeconds(millis) {
+			var minutes = Math.floor(millis / 60000);
+			var seconds = ((millis % 60000) / 1000).toFixed(0);
+			return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+		}
+		function minutesToMilliseconds(min){
+			return min*60000;
+		}
+
+		var time=minutesToMilliseconds(1);
+		var countdown=time;
+		var count = setInterval(function(){updateTimer()}, 1000);
+		var bell = setInterval(function(){ringBell()}, time);
+		function ringBell(){
+			alert("Sorpresa");
+		}
+		function updateTimer(){
+			countdown=countdown-1000;
+			$("#timeout").html(millisToMinutesAndSeconds(countdown));
+		}
+
+
 	style.
 		.header{
 			background-color:#555;
@@ -16,6 +39,7 @@ block content
 			margin-left:50%;
 			padding:10px;
 			text-align:center;
+			top:100px;
 			box-shadow:0px 0px 10px #999;
 		}
 		.container .title{
@@ -31,6 +55,14 @@ block content
 		.header_under{
 			height:20px;
 		}
+		label,input:focus ~ label, input:valid ~ label{
+			position:relative;
+			color:#333;
+			font-size:15px;
+			top:0px;
+			pointer-events: auto;
+			left:0px;
+		}
 		#timer{
 			color:#333;
 			font-family:'helvetica';
@@ -39,8 +71,33 @@ block content
 			top: 80px;
 			right:10px;
 		}
+		.askSpace{
+			border-bottom:1px solid #444;
+			padding:10px;
+		}
+
+
 	.container
 		.title Física
-		span#timer [30:00] Minutos Restantes
-
-
+		span#timer
+			span#timeout [00:00]
+			span &nbsp;Minutos Restantes
+		br
+		br
+		br
+		.askSpace
+			p Aquí va la pregunta
+			input(id="resp1" type="radio" name="p1" value="resp1")
+			label(for="resp1") resp1
+			input(id="resp2" type="radio" name="p1" value="resp2")
+			label(for="resp2") resp2
+			input(id="resp3" type="radio" name="p1" value="resp3")
+			label(for="resp3") resp3
+		.askSpace
+			p Aquí va la pregunta
+			input(id="juan" type="radio" name="p2" value="juan")
+			label(for="juan") resp1
+			input(id="pepe" type="radio" name="p2" value="pepe")
+			label(for="pepe") resp2
+			input(id="banana" type="radio" name="p2" value="banana")
+			label(for="banana") resp3
