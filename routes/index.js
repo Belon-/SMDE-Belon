@@ -40,25 +40,188 @@ exports.logout = function(req, res){
 	res.redirect('/');
 };
 
+
 exports.cues = function(req, res){
-	cuestionario.find({},function(error, documento){
+
+	var Nmax = 2;
+	var Nmin = 1;
+	var Naleatorio;
+	var array= new Array();
+	var Random = new Array();
+	var i;
+
+
+	/*for(i=0;i<11;i++){
+		Naleatorio=Math.floor(Math.random()*(Nmax-(Nmin-1)))+Nmin;	
+		Random.push(Naleatorio);
+		console.log(Random);
+		console.log(Random[i]);
+		console.log(i);
+		var a=cuestionario.find({nu: Random[i]},function(error, documento){
 		if(error){
-
+			console.log("Ha occurido un error en la busqueda de la información de BD...")
 		}else{
-			/*function aleatorio(min:Number, max:Number):Number{
-				var num: Number= Math.floor(Math.random()*(max-min+1))+min;
-				return num;
-				var numeroNuevo:Number=aleatorio(1,10);
-			}*/
-
-		res.render('students/cues', { title: 'Cuestionarios', datos: documento });
-
+			console.log(i);
+		if(i==11){
+			array[1]=documento;	
+			console.log("algo");
 		}
+			if(i==12){
+				array[2]=documento;	
+			}
+			if(i==13){
+				array[3]=documento;	
+			}
+			if(i==14){
+				array[4]=documento;	
+			}
+			if(i==15){
+				array[5]=documento;	
+			}
+			if(i==16){
+				array[6]=documento;	
+			}
+			if(i==17){
+				array[7]=documento;	
+			}
+			if(i==18){
+				i=i+1;
+				array[8]=documento;
+				i=i+1;	
+			}
+			if(i==19){
+				array[9]=documento;
+				i=i+1;	
+			}
+			if(i==20){
+				console.log(array);
+				res.render('students/cues', { title:'Cuestionarios', arreglo: array});
+				i=i+1;
+			}
+			
+			
+			
+		}
+		
+		})
+	}
+	cuestionario.find({nu: Random[0], nu: Random[1], nu: Random[2], nu: Random[3],
+	nu: Random[4], nu: Random[5], nu: Random[6], nu: Random[7], nu: Random[8], nu: Random[9]},function(error, documento){
+		if(error){
+			console.log("Ha occurido un error en la busqueda de la información de BD...")
+		}else{
+			array[0]=documento;
+			res.render('students/cues', { title:'Cuestionarios', preguntas: array[0]});
+			console.log(documento);
+		}
+		
+	})*/
 
-	})
+	for(i=1;i<11;i++){
+		Naleatorio=Math.floor(Math.random()*(Nmax-(Nmin-1)))+Nmin;	
+		Random.push(Naleatorio);
+		console.log(Random);	
+		if(i==1){
+			cuestionario.find({nu: Random[0]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD...")
+			}else{
+				array[0]=documento;
+				}
+			})
+		}
+		if(i==2){
+			cuestionario.find({nu: Random[1]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD2...")
+			}else{
+				array[1]=documento;						
+			}
+			})
+		}
+		if(i==3){
+			cuestionario.find({nu: Random[2]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD3...")
+			}else{
+			array[2]=documento;
+			}
+			})					
+		}
+		if(i==4){
+			cuestionario.find({nu: Random[3]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD4...")
+			}else{
+				array[3]=documento;
+			}
+		})
+		}
+		if(i==5){
+			cuestionario.find({nu: Random[4]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD5...")
+			}else{
+				array[4]=documento;
+			}
+		})
+		}
+		if(i==6){
+			cuestionario.find({nu: Random[5]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD6...")
+			}else{
+				array[5]=documento;
+				
+			}
+		})
+		}
+		if(i==7){
+			cuestionario.find({nu: Random[6]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD7...")
+			}else{
+				array[6]=documento;
+			}
+		})
+		}
+		if(i==8){
+			cuestionario.find({nu: Random[7]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD8...")
+			}else{
+				array[7]=documento;
+			}
+		})
+		}
+		if(i==9){
+			cuestionario.find({nu: Random[8]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD9...")
+			}else{
+				array[8]=documento;	
+			}
+		})
+		}
+		if(i==10){
+			cuestionario.find({nu: Random[9]},function(error, documento){
+			if(error){
+				console.log("Ha occurido un error en la busqueda de la información de BD10...");
+			}else{
+				array[9]=documento;
+				if(i==11){
+					res.render('students/cues', { title:'Cuestionarios', p1:array[0],p2:array[1],p3:array[2],p4:array[3],p5:array[4],
+						p6:array[5],p7:array[6],p8:array[7],p9:array[8],p10:array[9]});
+					i=i+1;
+					console.log(array);
+				}else{
 
+				}
+			}
+		})
+		}	
+	}
 };
-
 
 exports.crea = function(req, res){
 

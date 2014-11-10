@@ -1,12 +1,5 @@
 extends ../layout
 
-script.
-	function aleatorio(min:Number, max:Number):Number{
-					var num: Number= Math.floor(Math.random()*(max-min+1))+min;
-					return num;
-					var numeroNuevo:Number=aleatorio(1,10);
-					alert("Número aleatorio"+numeroNuevo);
-				}
 
 block content
 	br
@@ -17,8 +10,40 @@ block content
 	br
 	br
 	br
-	h1 Hola hijos de !#$"#$%/!!
-	
-	-each tumama in datos
-		p #{tumama.pregunta}
-	
+	h1 Cuestionario Aleatorio!!
+	hr
+	br
+	p #{p1[0].pregunta}
+	p #{p1[0].a.t}
+	p #{p1[0].b.t}
+	p #{p1[0].c.t}
+	p #{p1[0].d.t} 
+
+	p #{p2[0].pregunta}
+	p #{p2[0].a.t}
+	p #{p2[0].b.t}
+	p #{p2[0].c.t}
+	p #{p2[0].d.t}
+
+	p #{p3[0].pregunta}
+	p #{p3[0].a.t}
+	p #{p3[0].b.t}
+	p #{p3[0].c.t}
+	p #{p3[0].d.t}
+
+	p #{p4[0].pregunta}
+	p #{p4[0].a.t}
+	p #{p4[0].b.t}
+	p #{p4[0].c.t}
+	p #{p4[0].d.t}
+
+	p #{p5[0].pregunta}
+	p #{p5[0].a.t}
+	p #{p5[0].b.t}
+	p #{p5[0].c.t}
+	p #{p5[0].d.t}
+
+	p #{p6[0].pregunta}
+	p #{p6[0].a.t}
+	p #{p6[0].b.t}
+	p #{p6[0].c.t}
