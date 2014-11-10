@@ -36,6 +36,7 @@
 .profesor_suboptioncont{
 	width: 100%;
 	padding: 0px;
+	color: #2e2e2e;
 }
 
 .profesor_suboptioncontinner, .profesor_suboptioncont form{
@@ -51,7 +52,8 @@
 	padding-left: 40px;
 	margin-left: 8%;
 	font-family: sans-serif;
-	font-size: 19px;
+	font-size: 16px;
+	font-weight: bold;
 	display: block;
 }
 
@@ -60,9 +62,8 @@
 	position: relative;
 	border-bottom: 1px solid #e0e0e0;
 	padding: 8px;
-	color: #2e2e2e;
 	margin-bottom: 10px;
-	font-size: 22px;
+	font-size: 20px;
 	font-family: "Roboto" , sans-serif;
 	font-weight: 300;
 }
