@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-
+var htmlToPdf = require('html-to-pdf');
 var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
@@ -20,6 +20,7 @@ var teoria = require('./moduls/Teoria');
 var cuestionarios = require('./moduls/Cuestionarios');
 
 var app = express();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -63,6 +64,23 @@ app.get('/std/test',stdnts.test);
 app.get('/quest/add',stdnts.addQ);
 app.get('/theory/add',stdnts.addTheory);
 app.get('/theory/base',stdnts.base);
+app.get('/export',function(){
+  var html = "<h1>hola</h1>"; //Some HTML String from code above
+
+  htmlToPdf.convertHTMLString(html, '/public/pdf/destination.pdf',
+      function (error, success) {
+          if (error) {
+              console.log('Oh noes! Errorz!');
+              console.log(error);
+          } else {
+              console.log('Woot! Success!');
+              console.log(success);
+          }
+      }
+  );
+
+});
+
 
 app.post('/crea', routes.crea);
 app.post('/inicia', routes.inicia);
