@@ -775,6 +775,7 @@ body {
   padding: 0px;
   padding-top: 80px;
   padding-bottom: 50px;
-  margin: 0px auto; }
+  margin: 0px auto;
+  position: relative; }
 
 /*# sourceMappingURL=app.css.map */

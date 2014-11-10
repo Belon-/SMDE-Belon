@@ -1,7 +1,7 @@
-.group 			  { 
-  position:relative; 
+.group 			  {
+  position:relative;
   margin-bottom:45px;
-  font-family: "Roboto" , sans-serif; 
+  font-family: "Roboto" , sans-serif;
 }
 .group input[type=text], .group input[type=password], .group input[type=email]{
   font-size:16px;
@@ -45,15 +45,15 @@ input[type=button]{
 
 /* LABEL ======================================= */
 .group label 				 {
-  color:#999; 
+  color:#999;
   font-size:16px;
   font-weight:normal;
   position:absolute;
   pointer-events:none;
   left:5px;
   top:10px;
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 
@@ -68,20 +68,20 @@ input[type=button]{
 .group .bar 	{ position:relative; display:block; width:300px; }
 .group .bar:before, .group .bar:after 	{
   content:'';
-  height:2px; 
+  height:2px;
   width:0;
-  bottom:1px; 
+  bottom:1px;
   position:absolute;
-  background:#1E88E5; 
-  transition:0.2s ease all; 
-  -moz-transition:0.2s ease all; 
+  background:#1E88E5;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
   -webkit-transition:0.2s ease all;
 }
 .group .bar:before {
   left:50%;
 }
 .group .bar:after {
-  right:50%; 
+  right:50%;
 }
 
 /* active state */
@@ -92,9 +92,9 @@ input[type=button]{
 /* HIGHLIGHTER ================================== */
 .highlight {
   position:absolute;
-  height:60%; 
-  width:100px; 
-  top:25%; 
+  height:60%;
+  width:100px;
+  top:25%;
   left:0;
   pointer-events:none;
   opacity:0.5;

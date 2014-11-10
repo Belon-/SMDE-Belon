@@ -4,6 +4,40 @@ html
     script(src='/javascripts/editor.js')
     script(src='/javascripts/editor_actions.js')
     script(src='/javascripts/jquery-ui.min.js')
+    script(src='/jsPDF/jspdf.js')
+    script(src='/jsPDF/jspdf.plugin.from_html.js')
+    script(src='/jsPDF/jspdf.plugin.split_text_to_size.js')
+    script(src='/jsPDF/jspdf.plugin.standard_fonts_metrics.js')
+    script.
+      function pdf(){
+        var doc = new jsPDF('p','pt','letter');
+        console.log(doc);
+        var elementHandler = {
+          '#ignorePDF': function (element, renderer) {
+            return true;
+          }
+        };
+        var margins = {
+          top: 80,
+          bottom: 60,
+          left: 40,
+          width: 522
+        };
+        var source = window.document.getElementsByTagName("body")[0];
+        doc.fromHTML(
+            source,
+            15,
+            15,
+            {
+              'width': 180,'elementHandlers': elementHandler
+            },function(dispose){
+              doc.save('Test.pdf');
+            },
+            margins
+        );
+        console.log(doc);
+      }
+
     link(rel='stylesheet', href='/stylesheets/app.css')
     style.
       body{

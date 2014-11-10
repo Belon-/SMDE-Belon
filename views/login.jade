@@ -5,8 +5,8 @@ block content
 	style.
 		.container{
 			z-index:97;
-			width:490px;
-			height: 390px;
+			width:480px;
+			height: 520px;
 			background-color: #eeeeee;
 			position: relative;
 			margin: 0px auto;
@@ -26,6 +26,12 @@ block content
 			padding-top:32px;
 			border-bottom: 3px solid #9e9e9e;
 		}
+		.container table{
+			width:70%;
+		}
+		.header{
+			z-index:1;
+		}
 
 		.form{
 			padding:0px;
@@ -36,7 +42,7 @@ block content
 			br
 			br
 			form(method="post", action='inicia')
-				table(align="right" style="margin-right: 18px;")
+				table(align="center" style="widht:100%;")
 					tr
 						td
 							div.group
@@ -53,6 +59,9 @@ block content
 								label Contraseña
 					tr
 						td(colspan="2" align="center")
+							br
+							br
+							br
 							input(type="submit", value="Iniciar")
 							span &nbsp;
 							input(type="button", onclick="window.location='/signup'", value="Registrarme")
