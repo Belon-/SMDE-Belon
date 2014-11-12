@@ -24,7 +24,14 @@ var Alumno = mongoose.Schema({
 			calif:	{type: String, required: true}
 
 		}
-	]
+	],
+	notas:[{
+		id_nota:{type:String, required: true},
+		titulo:{type:String,required: true},
+		cuerpo:{type:String, requiered:true},
+		creada: {type: Date, default: Date.now},
+		notas:{type:String}
+	}]
 
 });
 
